@@ -1,0 +1,3355 @@
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html>
+
+
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="referrer" content="always" />
+<meta name="description" content="PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（标准通用标记语言下的一个应用）文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；PHP还可以执行编译后代码，编译可以达到加密和优化代码运行，使代码运行更快。...">
+<title>PHP（超文本预处理器）_百度百科</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu.svg">
+
+<meta name="keywords" content="PHP 超文本预处理器 Personal Home Page Hypertext Preprocessor 英文超文本预处理语言 php语言 ＰＨＰ PHP发展 PHP开发工具 PHP特性 PHP优势 PHP技术应用 PHP参考手册 PHP版本区别 PHPPHP3 PHPPHP4 PHPPHP5 PHP版本6设想 PHP环境配置 PHP其他方面">
+<meta name="image" content="https://bkssl.bdimg.com/cms/static/baike.png">
+<script type="text/javascript">
+  // 配置 PD 监控。
+  window.alogObjectConfig = {
+    product: '103',
+    page: '103_1',
+    speed: {
+      sample: '0.008'
+    },
+    monkey: {
+      sample: '1',
+      hid: '1533'
+    },
+    exception: { 
+      sample: '0.004'
+    },
+    feature: {
+      sample: '0.004'
+    },
+    csp: {
+      sample: '0.008',
+      'default-src': [
+        {match: '*.baidu.com,*.bdimg.com,localhost', target: 'Accept'},
+        {match: '*', target: 'Accept,Warn'}
+      ]
+    }
+  };
+
+  void function(a,b,c,d,e,f,g){a.alogObjectName=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=a[e].l||+new Date,d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d;var h=!0;if(a.alogObjectConfig&&a.alogObjectConfig.sample){var i=Math.random();a.alogObjectConfig.rand=i,i>a.alogObjectConfig.sample&&(h=!1)}h&&(f=b.createElement(c),f.async=!0,f.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),g=b.getElementsByTagName(c)[0],g.parentNode.insertBefore(f,g))}(window,document,"script","/hunter/alog/alog.min.js","alog"),void function(){function a(){}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date),alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:a,tti:a,page_ready:a}}();
+  void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);
+</script>
+<meta name="csrf-token" content="">
+<meta itemprop="dateUpdate" content="2016-08-01 15:58:01" />
+
+<!--[if lte IE 9]>
+<script>
+    (function() {
+      var e = "abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(","),
+        i = e.length;
+      while (i--) {
+        document.createElement(e[i]);
+      }
+    })();
+  </script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/pkg/wiki-lemma_63c8341.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-common/pkg/wiki-common-base_9493ab2.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-common/widget/component/userbar-n/userbar-n_78dab81.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-common/widget/lib/larkplayer/larkplayer_981c735.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-common/widget/lib/webuploader/webuploader_08d9db4.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/pkg/wiki-lemma-module_ff3edf0.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/index_c66d49f.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/announcement/announcement_cba33f4.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/label/label_ca156c6.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/newSideShare/sideShare_9c411cd.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/video/pageMask/pageMask_ff9a193.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/secondsKnow_8fa95ac.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/style/shCore_7fba49a.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/style/shCoreDefault_3f91dc3.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/mainContent_98e3702.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaRelation/lemmaRelation_ac86a59.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/zhixin/zhixin_3b0d7a5.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/sideAuth/sideAuth_c13d91a.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/searchHeader/toolButtons-n/toolButtons-n_6e90fdd.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/searchHeader/toolButtons-n/userInfo-n_7e90184.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/searchHeader/searchHeader-n_f9a6e5b.css"/>    
+</head>
+
+<script type="text/javascript">
+    alog('speed.set', 'ht', +new Date);
+</script>
+<script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?55b574651fcae74b0a9f1cf9c8d7c93a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<body class="wiki-lemma normal">
+
+
+<div class="header-wrapper pc-header-new">
+<div class="topbar cmn-clearfix">
+<ul class="wgt-userbar wgt-userbar-n" id="j-wgt-userbar">
+<li>
+<a href="http://www.baidu.com/">百度首页</a>
+</li>
+</ul>
+<div class="separator"></div>
+<div class="wiki-common-headTabBar">
+<a href="https://www.baidu.com/" nslog="normal" nslog-type="10600112" data-href="https://www.baidu.com/s?ie=utf-8&fr=bks0000&wd=">网页</a>
+<a href="http://news.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://news.baidu.com/ns?tn=news&cl=2&rn=20&ct=1&fr=bks0000&ie=utf-8&word=">新闻</a>
+<a href="https://tieba.baidu.com/" nslog="normal" nslog-type="10600112" data-href="https://tieba.baidu.com/f?ie=utf-8&fr=bks0000&kw=">贴吧</a>
+<a href="https://zhidao.baidu.com/" nslog="normal" nslog-type="10600112" data-href="https://zhidao.baidu.com/search?pn=0&&rn=10&lm=0&fr=bks0000&word=">知道</a>
+<a href="http://music.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://music.baidu.com/search?f=ms&ct=134217728&ie=utf-8&rn=&lm=-1&pn=30&fr=bks0000&key=">音乐</a>
+<a href="http://image.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://image.baidu.com/search/index?tn=baiduimage&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=">图片</a>
+<a href="http://v.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://v.baidu.com/v?ct=301989888&rn=20&pn=0&db=0&s=22&ie=utf-8&fr=bks0000&word=">视频</a>
+<a href="http://map.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://map.baidu.com/m?ie=utf-8&fr=bks0000&word=">地图</a>
+<a href="https://wenku.baidu.com/" nslog="normal" nslog-type="10600112" data-href="https://wenku.baidu.com/search?lm=0&od=0&ie=utf-8&fr=bks0000&word=">文库</a>
+<b class="baike">百科</b>
+</div>
+</div>
+<div class="header">
+<div class="layout">
+<div class="wgt-searchbar wgt-searchbar-new wgt-searchbar-main cmn-clearfix wgt-searchbar-large">
+<div class="logo-container">
+<a class="logo cmn-inline-block" title="到百科首页" href="/">
+<span class="cmn-baike-logo">
+<em class="cmn-icon cmn-icons cmn-icons_logo-bai"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-du"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-baike"></em>
+</span>
+</a>
+</div>
+<div class="search">
+<div class="form">
+<form id="searchForm" action="/search/word" method="GET" target="_self">
+<input id="query" nslog="normal" nslog-type="10080011" name="word" type="text" autocomplete="off" autocorrect="off" value="PHP" /><button id="search" nslog="normal" nslog-type="10080008" type="button">进入词条</button><button id="searchLemma" nslog="normal" nslog-type="10080009" type="button">全站搜索</button><a class="help" href="/help" nslog="normal" nslog-type="10080010" target="_blank">帮助</a>
+</form>
+<form id="searchLemmaForm" action="/search" method="GET" target="_self">
+<input id="searchLemmaQuery" name="word" type="hidden" />
+<input name="pn" type="hidden" value="0" />
+<input name="rn" type="hidden" value="0" />
+<input name="enc" type="hidden" value="utf8" />
+</form>
+<ul id="suggestion" class="suggestion">
+<div class="sug"></div>
+<li class="extra">
+<span id="clear" style="margin-right:8px;">清除历史记录</span><span id="close" nslog="normal" nslog-type="10080012">关闭</span>
+</li>
+</ul>
+</div></div>
+</div>
+<div class="declare-wrap" id="J-declare-wrap">
+<div class="declare" id="J-declare">声明：百科词条人人可编辑，词条创建和修改均免费，绝不存在官方及代理商付费代编，请勿上当受骗。<a class="declare-details" target="_blank" href="/common/declaration">详情>></a>
+<div class="close-btn" id="J-declare-close">
+<em class="cmn-icon cmn-icons cmn-icons_close"></em>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="navbar-wrapper">
+<div class="wgt-navbar">
+<div class="navbar-bg">
+<div class="navbar-bg-top">
+<div class="navbar-content layout">
+<div class="navbar-content-box">
+<dl class="index ">
+<dt><a href="/">首页</a></dt>
+<dd>
+<div><a href="/calendar/" target="_blank">历史上的今天</a></div>
+<div><a href="/vbaike/" target="_blank">百科冷知识</a></div>
+<div><a href="vbaike#gallary" target="_blank">图解百科</a></div>
+</dd>
+</dl>
+<dl class="cat ">
+<dt><a>分类</a></dt>
+<dd>
+<div><a href="/art" target="_blank" class="art">艺术</a></div>
+<div><a href="/science" target="_blank" class="technology">科学</a></div>
+<div><a href="/ziran" target="_blank">自然</a></div>
+<div><a href="/wenhua" target="_blank">文化</a></div>
+<div><a href="/dili" target="_blank">地理</a></div>
+<div><a href="/shenghuo" target="_blank">生活</a></div>
+<div><a href="/shehui" target="_blank">社会</a></div>
+<div><a href="/renwu" target="_blank">人物</a></div>
+<div><a href="/jingji" target="_blank">经济</a></div>
+<div><a href="/tiyu" target="_blank">体育</a></div>
+<div><a href="/lishi" target="_blank">历史</a></div>
+</dd>
+</dl>
+<dl class="special ">
+<dt><a>特色百科</a></dt>
+<dd><div><a href="/museum/" target="_blank">数字博物馆</a></div>
+<div><a href="/feiyi?fr=dhlfeiyi" target="_blank">非遗百科</a></div>
+<div><a href="/wikicategory/view?categoryName=多肉植物" target="_blank">多肉百科</a></div>
+<div><a href="/wikicategory/view?categoryName=恐龙大全" target="_blank">恐龙百科</a></div>
+<div><a href="/city/" target="_blank">城市百科</a></div>
+<div><a href="/operation/worldwar2" target="_blank">二战百科</a></div>
+</dd>
+</dl>
+<dl class="user" >
+<dt><a>用户</a></dt>
+<dd>
+<div><a href="/kedou/" target="_blank">蝌蚪团</a></div>
+<div><a href="/event/ranmeng/" target="_blank">燃梦计划</a></div>
+<div><a href="/task/" target="_blank">百科任务</a></div>
+<div><a href="/mall/" target="_blank">百科商城</a></div>
+</dd>
+</dl>
+<dl class="cooperation" >
+<dt><a>权威合作</a></dt>
+<dd>
+<div><a href="/operation/cooperation#joint" target="_blank">合作模式</a></div>
+<div><a href="/operation/cooperation#issue" target="_blank">常见问题</a></div>
+<div><a href="/operation/cooperation#connection" target="_blank">联系方式</a></div>
+</dd>
+</dl>
+<dl class="mobile" >
+<dt><a>手机百科</a></dt>
+<dd>
+<div><a href="/m#wap" target="_blank">网页版</a></div>
+</dd>
+</dl>
+<div class="usercenter">
+<div><a href="/usercenter" target="_blank"><em class="cmn-icon cmn-icons cmn-icons_navbar-usercenter"></em>个人中心</a></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="body-wrapper">
+<div class="before-content">
+<div id="lemmaWgt-secondsKnow" class="lemmaWgt-secondsKnow-pageBg lemmaWgt-secondsKnow-isScience-pageBg">
+<div class="layout">
+<ul class="lemmaWgt-secondsKnow-gallery">
+<li data-mediaId="mda-heudqx9vsr02bxq7" data-secondId="208297">
+<a href="javascript:;" nslog-type="10002502">
+<img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D400/sign=ff785e2946086e066aa83e4b32097b5a/bf096b63f6246b604bd2706ce1f81a4c500fa2ce.jpg" />
+<span class="video-shadow"></span>
+<span class="video-play"><em class="cmn-icon cmn-icons cmn-icons_videoPlayer-play"></em></span>
+<span class="video-title" title="解密PHP编程开发">
+<span class="video-title-content">解密PHP编程开发</span>
+<span class="video-title-vv"><em class="wiki-lemma-icons wiki-lemma-icons_eye"></em></span>
+</span>
+</a>
+</li>
+<li data-mediaId="mda-iawk25nhb90vhac0" data-secondId="413233">
+<a href="javascript:;" nslog-type="10002502">
+<img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D400/sign=72ef9d01114c510faec4e31a505b2528/caef76094b36acafdb76d53577d98d1000e99c61.jpg" />
+<span class="video-shadow"></span>
+<span class="video-play"><em class="cmn-icon cmn-icons cmn-icons_videoPlayer-play"></em></span>
+<span class="video-title" title="两分钟看懂PHP">
+<span class="video-title-content">两分钟看懂PHP</span>
+<span class="video-title-vv"><em class="wiki-lemma-icons wiki-lemma-icons_eye"></em></span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="bgMask"></div>
+</div>
+<div class="after-science-page-background" style="position:relative;margin-top:-260px;"></div>
+<div class="polysemant-list polysemant-list-normal">
+<div class="polysemantList-header">
+<div class="polysemantList-header-title">
+<b>PHP</b>是一个<a href="/item/%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91%EF%BC%9A%E5%A4%9A%E4%B9%89%E8%AF%8D" target="_blank">多义词</a>，请在下列<a href="/item/%E4%B9%89%E9%A1%B9" target="_blank">义项</a>上选择浏览（<a href="/item/PHP?force=1" target="_blank">共3个义项</a>）</div>
+<a class="polysemantList-addButton" target="_blank" href="javascript:;" data-href="/createsub/PHP">添加义项</a>
+</div>
+<ul class="polysemantList-wrapper cmn-clearfix" >
+<li class="item">▪<span class="selected">超文本预处理器</span></li>
+<li class="item">▪<a title="菲律宾比索的标准符号" href='/item/php/3954962#viewPageContent'>菲律宾比索的标准符号</a></li>
+<li class="item">▪<a title="MPLS网络中的倒数第二跳弹出" href='/item/php/6077958#viewPageContent'>MPLS网络中的倒数第二跳弹出</a></li>
+</ul>
+</div>
+</div>
+<div class="content-wrapper">
+<div class="content">
+<div class="personal-content">
+</div>
+<div class="main-content">
+<a class="posterFlag expert-icon " href="javascript:;" title="权威专家认证词条"></a>
+<div class="top-tool">
+<a href="/divideload/PHP" title="拆分词条" target="_blank" class="split-icon top-tool-icon" style="display:none;" nslog-type="50000104">
+<em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_lemma-split"></em>
+</a>
+<div class="top-collect top-tool-icon" nslog="area" nslog-type="50000102">
+<em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_star-solid"></em>
+<span class="collect-text">收藏</span>
+<div class="collect-tip">查看<a href="/uc/favolemma" target="_blank">我的收藏</a></div>
+</div>
+<a href="javascript:void(0);" id="j-top-vote" class="top-vote top-tool-icon" nslog-type="10060801">
+<em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_zan-solid"></em>
+<span class="vote-count">0</span>
+<span class="vote-tip">有用+1</span>
+<span class="voted-tip">已投票</span>
+</a><div class="bksharebuttonbox top-share">
+<a class="top-share-icon top-tool-icon" nslog-type="9067">
+<em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_share"></em>
+<span class="share-count" id="j-topShareCount">0</span>
+</a>
+<div class="new-top-share" id="top-share">
+<ul class="top-share-list">
+<li class="top-share-item">
+<a class="share-link bds_qzone"  href="javascript:void(0);" nslog-type="10060501">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qzone"></em>
+</a>
+</li>
+<li class="top-share-item">
+<a class="share-link bds_tsina" href="javascript:void(0);" nslog-type="10060701">
+<em class="cmn-icon cmn-icons cmn-icons_logo-sina-weibo"></em>
+</a>
+</li>
+<li class="top-share-item">
+<a class="bds_wechat"  href="javascript:void(0);" nslog-type="10060401">
+<em class="cmn-icon cmn-icons cmn-icons_logo-wechat"></em>
+</a>
+</li>
+<li class="top-share-item">
+<a class="share-link bds_tqq"  href="javascript:void(0);" nslog-type="10060601">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qq"></em>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="width:0;height:0;clear:both"></div><dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-">
+<dd class="lemmaWgt-lemmaTitle-title">
+<h1 >PHP</h1>
+<h2>（超文本预处理器）</h2>
+<a href="javascript:;" class="edit-lemma cmn-btn-hover-blue cmn-btn-28 j-edit-link"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+<a class="lock-lemma" target="_blank" href="/view/10812319.htm" title="锁定"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_lock-lemma"></em>锁定</a>
+</dd>
+</dl><div class="authorityListPrompt">
+<div class="main-content-zj">
+本词条由<a href="http://www.cast.org.cn" target="_blank" class="nslog:7175">“科普中国”百科科学词条编写与应用工作项目</a>
+审核
+。</div>
+</div>
+<div class="promotion-declaration">
+</div><div class="lemma-summary" label-module="lemmaSummary">
+<div class="para" label-module="para">PHP（外文名:PHP: Hypertext Preprocessor，中文名：“<a target=_blank href="/item/%E8%B6%85%E6%96%87%E6%9C%AC">超文本</a><a target=_blank href="/item/%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8">预处理器</a>”）是一种通用<a target=_blank href="/item/%E5%BC%80%E6%BA%90">开源</a><a target=_blank href="/item/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80">脚本语言</a>。<a target=_blank href="/item/%E8%AF%AD%E6%B3%95">语法</a>吸收了<a target=_blank href="/item/C%E8%AF%AD%E8%A8%80">C语言</a>、<a target=_blank href="/item/Java">Java</a>和<a target=_blank href="/item/Perl">Perl</a>的特点，利于学习，使用<a target=_blank href="/item/%E5%B9%BF%E6%B3%9B">广泛</a>，主要适用于<a target=_blank href="/item/Web">Web</a>开发领域。PHP 独特的<a target=_blank href="/item/%E8%AF%AD%E6%B3%95">语法</a>混合了<a target=_blank href="/item/C">C</a>、<a target=_blank href="/item/Java">Java</a>、<a target=_blank href="/item/Perl">Perl</a>以及<a target=_blank href="/item/PHP">PHP</a>自创的语法。它可以比<a target=_blank href="/item/CGI">CGI</a>或者<a target=_blank href="/item/Perl">Perl</a>更快速地执行<a target=_blank href="/item/%E5%8A%A8%E6%80%81%E7%BD%91%E9%A1%B5">动态网页</a>。用PHP做出的<a target=_blank href="/item/%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2">动态页面</a>与其他的<a target=_blank href="/item/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80">编程语言</a>相比，<a target=_blank href="/item/PHP/9337" data-lemmaid="9337">PHP</a>是将<a target=_blank href="/item/%E7%A8%8B%E5%BA%8F">程序</a>嵌入到<a target=_blank href="/item/HTML">HTML</a>（<a target=_blank href="/item/%E6%A0%87%E5%87%86%E9%80%9A%E7%94%A8%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80">标准通用标记语言</a>下的一个应用）文档中去执行，执行效率比完全生成<a target=_blank href="/item/HTML">HTML</a>标记的<a target=_blank href="/item/CGI/607810" data-lemmaid="607810">CGI</a>要高许多；PHP还可以执行<a target=_blank href="/item/%E7%BC%96%E8%AF%91">编译</a>后代码，编译可以达到<a target=_blank href="/item/%E5%8A%A0%E5%AF%86">加密</a>和<a target=_blank href="/item/%E4%BC%98%E5%8C%96">优化</a>代码运行，使代码运行更快。</div>
+</div>
+<div class="configModuleBanner">
+</div><div class="basic-info cmn-clearfix">
+<dl class="basicInfo-block basicInfo-left">
+<dt class="basicInfo-item name">中文名</dt>
+<dd class="basicInfo-item value">
+超文本预处理器
+</dd>
+<dt class="basicInfo-item name">外文名</dt>
+<dd class="basicInfo-item value">
+PHP: Hypertext Preprocessor
+</dd>
+<dt class="basicInfo-item name">编程范型</dt>
+<dd class="basicInfo-item value">
+面向对象、命令式编程
+</dd>
+<dt class="basicInfo-item name">设计者</dt>
+<dd class="basicInfo-item value">
+Rasmus Lerdorf
+</dd>
+</dl><dl class="basicInfo-block basicInfo-right">
+<dt class="basicInfo-item name">维&nbsp;&nbsp;&nbsp;&nbsp;护</dt>
+<dd class="basicInfo-item value">
+The PHP Group
+</dd>
+<dt class="basicInfo-item name">最新版本</dt>
+<dd class="basicInfo-item value">
+PHP 5.6.0（28 Aug 2014）
+</dd>
+<dt class="basicInfo-item name">操作系统</dt>
+<dd class="basicInfo-item value">
+windows/linux/Mac跨平台
+</dd>
+<dt class="basicInfo-item name">外语缩写</dt>
+<dd class="basicInfo-item value">
+PHP
+</dd>
+</dl></div>
+<div class="lemmaWgt-lemmaCatalog">
+<div class="lemma-catalog">
+<h2 class="block-title">目录</h2>
+<div class="catalog-list column-4">
+<ol>
+<li class="level1">
+<span class="index">1</span>
+<span class="text"><a href="#1">发展</a></span>
+</li>
+<li class="level1">
+<span class="index">2</span>
+<span class="text"><a href="#2">开发工具</a></span>
+</li>
+<li class="level1">
+<span class="index">3</span>
+<span class="text"><a href="#3">特性</a></span>
+</li>
+<li class="level1">
+<span class="index">4</span>
+<span class="text"><a href="#4">优势</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_1">开放源代码</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_2">免费性</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_3">快捷性</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_4">跨平台性强</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_5">效率高</a></span>
+</li>
+</ol><ol><li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_6">图像处理</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_7">面向对象</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_8">专业专注</a></span>
+</li>
+<li class="level1">
+<span class="index">5</span>
+<span class="text"><a href="#5">技术应用</a></span>
+</li>
+<li class="level1">
+<span class="index">6</span>
+<span class="text"><a href="#6">参考手册</a></span>
+</li>
+<li class="level1">
+<span class="index">7</span>
+<span class="text"><a href="#7">版本区别</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#7_1">选择版本</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#7_2">VC6与VC9</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#7_3">TS和NTS</a></span>
+</li>
+</ol><ol><li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#7_4">查看版本</a></span>
+</li>
+<li class="level1">
+<span class="index">8</span>
+<span class="text"><a href="#8">PHP3</a></span>
+</li>
+<li class="level1">
+<span class="index">9</span>
+<span class="text"><a href="#9">PHP4</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#9_1">简介</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#9_2">优越性</a></span>
+</li>
+<li class="level1">
+<span class="index">10</span>
+<span class="text"><a href="#10">PHP5</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#10_1">新对象模式</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#10_2">异常处理</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#10_3">命名空间</a></span>
+</li>
+</ol><ol><li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#10_4">加密</a></span>
+</li>
+<li class="level1">
+<span class="index">11</span>
+<span class="text"><a href="#11">版本6设想</a></span>
+</li>
+<li class="level1">
+<span class="index">12</span>
+<span class="text"><a href="#12">环境配置</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#12_1">Windows下</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#12_2">安装过程</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#12_3">UNIX下</a></span>
+</li>
+<li class="level1">
+<span class="index">13</span>
+<span class="text"><a href="#13">其他方面</a></span>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="anchor-list">
+<a name="1" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_1" class="lemma-anchor " ></a>
+<a name="发展" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>发展</h2>
+</div>
+<div class="para" label-module="para"><div class="lemma-picture text-pic layout-right" style="width:199px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/PHP/9337/0/814b07d8dbda807632fa1c0c?fr=lemma&ct=single" target="_blank"
+		title="PHP安装" style="width:199px;height:220px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=d79afbc365380cd7e21ea5ef9145ad14/f11f3a292df5e0fefec18d725c6034a85fdf72e3.jpg"  alt="PHP安装" style="width:199px;height:220px;"/>
+</a>
+<span class="description">
+PHP安装
+</span>
+</div>PHP原始为Personal Home Page的缩写，已经正式更名为 &quot;PHP: Hypertext Preprocessor&quot;。注意不是“Hypertext Preprocessor”的缩写，这种将名称放到定义中的写法被称作<a target=_blank href="/item/%E9%80%92%E5%BD%92%E7%BC%A9%E5%86%99">递归缩写</a>。PHP于1994年由<a target=_blank href="/item/Rasmus%20Lerdorf">Rasmus Lerdorf</a>创建，刚刚开始是<a target=_blank href="/item/Rasmus%20Lerdorf">Rasmus Lerdorf</a>为了要<a target=_blank href="/item/%E7%BB%B4%E6%8A%A4">维护</a>个人网页而制作的一个简单的用<a target=_blank href="/item/Perl">Perl</a>语言编写的程序。这些工具程序用来显示 Rasmus Lerdorf 的个人履历，以及统计网页流量。后来又用<a target=_blank href="/item/C%E8%AF%AD%E8%A8%80">C语言</a>重新编写，包括可以访问<a target=_blank href="/item/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>。他将这些程序和一些<a target=_blank href="/item/%E8%A1%A8%E5%8D%95">表单</a>直译器整合起来，称为 PHP/FI。PHP/FI 可以和<a target=_blank href="/item/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>连接，产生简单的<a target=_blank href="/item/%E5%8A%A8%E6%80%81%E7%BD%91%E9%A1%B5">动态网页</a>程序。</div>
+<div class="para" label-module="para">在1995年以Personal Home Page Tools (PHP Tools) 开始对外发表第一个版本，Lerdorf写了一些介绍此程序的文档。并且发布了PHP1.0！在这的版本中，提供了访客<a target=_blank href="/item/%E7%95%99%E8%A8%80%E6%9C%AC">留言本</a>、访客计数器等简单的功能。以后越来越多的网站使用了PHP，并且强烈要求增加一些特性。比如<a target=_blank href="/item/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">循环语句</a>和数组<a target=_blank href="/item/%E5%8F%98%E9%87%8F">变量</a>等等；在新的成员加入开发行列之后，Rasmus Lerdorf 在1995年6月8日将 PHP/FI 公开发布，希望可以透过社群来加速程序开发与寻找错误。这个发布的版本命名为 PHP 2，已经有 PHP 的一些雏型，像是类似 <a target=_blank href="/item/Perl">Perl</a>的变量命名方式、表单处理功能、以及嵌入到 HTML 中执行的能力。程序语法上也类似 Perl，有较多的限制，不过更简单、更有弹性。PHP/FI加入了对MySQL的支持，从此建立了PHP在动态网页开发上的地位。到了1996年底，有15000个网站使用 PHP/FI。<div class="lemma-picture text-pic layout-right" style="width:215px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/PHP/9337/0/a8ad941386c25393f6039e0e?fr=lemma&ct=single" target="_blank"
+		title="ISAPI筛选器" style="width:215px;height:220px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=9e6caf120fb30f24319aeb01f894d192/8601a18b87d6277f7bca364b28381f30e824fced.jpg"  alt="ISAPI筛选器" style="width:215px;height:220px;"/>
+</a>
+<span class="description">
+ISAPI筛选器
+</span>
+</div></div>
+<div class="para" label-module="para">在1997年，任职于 Technion IIT公司的两个<a target=_blank href="/item/%E4%BB%A5%E8%89%B2%E5%88%97">以色列</a>程序设计师：Zeev Suraski 和 Andi Gutmans，重写了 PHP 的剖析器，成为 PHP 3 的基础。而 PHP 也在这个时候改称为PHP：Hypertext Preprocessor。经过几个月测试，开发团队在1997年11月发布了 PHP/FI 2。随后就开始 PHP 3 的开放测试，最后在1998年6月正式发布 PHP 3。Zeev Suraski 和 Andi Gutmans 在 PHP 3 发布后开始改写PHP 的核心，这个在1999年发布的剖析器称为 Zend Engine，他们也在以色列的 Ramat Gan 成立了 Zend Technologies 来管理 PHP 的开发。</div>
+<div class="para" label-module="para">在2000年5月22日，以Zend Engine 1.0为基础的PHP 4正式发布，2004年7月13日则发布了PHP 5，PHP 5则使用了第二代的Zend Engine。PHP包含了许多新特色，像是强化的<a target=_blank href="/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>功能、引入PDO（PHP Data Objects，一个存取数据库的延伸函数库）、以及许多效能上的增强。PHP 4已经不会继续<div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/PHP/9337/0/4e0b3ea4b3c538b49152ee0f?fr=lemma&ct=single" target="_blank"
+		title="PHP" style="width:220px;height:172px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=5e82320c78f0f736dcfe4b033a54b382/7af40ad162d9f2d3a2ca209ca9ec8a136227ccee.jpg"  alt="PHP" style="width:220px;height:172px;"/>
+</a>
+<span class="description">
+PHP
+</span>
+</div>更新，以鼓励用户转移到PHP 5。</div>
+<div class="para" label-module="para">2008年PHP 5成为了PHP唯一的有在开发的PHP版本。将来的PHP 5.3将会加入Late static binding和一些其他的功能强化。PHP 6 的开发也正在进行中，主要的改进有移除register_globals、magic quotes 和 Safe mode的功能。</div>
+<div class="para" label-module="para">PHP最新稳定版本：5.4.30(2013.6.26)</div>
+<div class="para" label-module="para">PHP最新发布的正式版本：5.5.14(2014.6.24)</div>
+<div class="para" label-module="para">PHP最新测试版本：5.6.0 RC2(2014.6.03)</div>
+<div class="para" label-module="para">2013年6月20日，PHP开发团队自豪地宣布推出PHP 5.5.0。此版本包含了大量的新功能和bug<a target=_blank href="/item/%E4%BF%AE%E5%A4%8D">修复</a>。需要开发者特别注意的一点是不再支持 Windows XP 和 2003 系统。</div>
+<div class="para" label-module="para">2014年10月16日，PHP开发团队宣布PHP 5.6.2可用。四安全相关的错误是固定在这个版本，包括修复cve-2014-3668，cve-2014-3669和cve-2014-3670。所有的PHP 5.6鼓励用户升级到这个版本。</div><div class="anchor-list">
+<a name="2" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_2" class="lemma-anchor " ></a>
+<a name="开发工具" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>开发工具</h2>
+</div>
+<div class="para" label-module="para"><a target=_blank href="/item/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">集成开发环境</a>是一种集成了软件开发过程中所需主要工具的集成开发环境，其功能包括但不仅限于代码高亮、代码补全、<a target=_blank href="/item/%E8%B0%83%E8%AF%95">调试</a>、<a target=_blank href="/item/%E6%9E%84%E5%BB%BA">构建</a>、<a target=_blank href="/item/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">版本控制</a>等。一些常见的PHP IDEs如下：</div>
+<ul class="custom_dot para-list list-paddingleft-1"><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para"><a target=_blank href="/item/Zend%20Studio">Zend Studio</a>：商业版，Zend官方出品，基于eclipse</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para"><a target=_blank href="/item/Eclipse/61703" data-lemmaid="61703">Eclipse</a> with PDT：免费</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para"><a target=_blank href="/item/Coda">Coda</a>：商业版，针对<a target=_blank href="/item/Mac/173" data-lemmaid="173">Mac</a>用户</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para"><a target=_blank href="/item/NetBeans">NetBeans</a>：免费，功能强大</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">PHP Storm：商业版</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para"><a target=_blank href="/item/Aptana">Aptana</a> Studio：免费</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">PhpEd：商业版</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para"><a target=_blank href="/item/Komodo">Komodo</a> IDE/Edit：IDE为商业版，Edit可免费使用</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Adobe Dreamweaver：商业版</div>
+</li></ul><div class="para" label-module="para">除去集成开发环境，具备代码高亮功能的常见<a target=_blank href="/item/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8">文本编辑器</a>因其轻巧灵活也常被选作开发工具，例如：<a target=_blank href="/item/Notepad%2B%2B">Notepad++</a>、<a target=_blank href="/item/Editplus">Editplus</a>、<a target=_blank href="/item/Sublime">Sublime</a>Text、Everedit（国人开发）等等。</div><div class="anchor-list">
+<a name="3" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_3" class="lemma-anchor " ></a>
+<a name="特性" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>特性</h2>
+</div>
+<div class="para" label-module="para">PHP的特性包括：</div>
+<div class="para" label-module="para">1. PHP 独特的语法混合了 C、Java、Perl 以及 PHP 自创新的语法。</div>
+<div class="para" label-module="para">2. PHP可以比CGI或者Perl更快速的执行<a target=_blank href="/item/%E5%8A%A8%E6%80%81">动态</a>网页——动态页面方面，与其他的编程语言相比，</div>
+<div class="para" label-module="para">PHP是将程序嵌入到<a target=_blank href="/item/HTML">HTML</a>文档中去执行，执行效率比完全生成htmL标记的CGI要高许多；</div>
+<div class="para" label-module="para">PHP具有非常强大的功能，所有的CGI的功能PHP都能实现。</div>
+<div class="para" label-module="para">3. PHP支持几乎所有流行的数据库以及<a target=_blank href="/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>。</div>
+<div class="para" label-module="para">4. 最重要的是PHP可以用C、C++进行程序的扩展！</div><div class="anchor-list">
+<a name="4" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4" class="lemma-anchor " ></a>
+<a name="优势" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>优势</h2>
+</div>
+<div class="anchor-list">
+<a name="4_1" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4_1" class="lemma-anchor " ></a>
+<a name="开放源代码" class="lemma-anchor " ></a>
+<a name="4-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>开放源代码</h3>
+</div>
+<div class="para" label-module="para">所有的PHP<a target=_blank href="/item/%E6%BA%90%E4%BB%A3%E7%A0%81">源代码</a>事实上都可以得到。</div><div class="anchor-list">
+<a name="4_2" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4_2" class="lemma-anchor " ></a>
+<a name="免费性" class="lemma-anchor " ></a>
+<a name="4-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>免费性</h3>
+</div>
+<div class="para" label-module="para">和其它技术相比，PHP本身免费且是开源代码。</div><div class="anchor-list">
+<a name="4_3" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4_3" class="lemma-anchor " ></a>
+<a name="快捷性" class="lemma-anchor " ></a>
+<a name="4-3" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>快捷性</h3>
+</div>
+<div class="para" label-module="para">程序开发快，运行快，技术本身学习快。嵌入于<a target=_blank href="/item/HTML">HTML</a>：因为PHP可以被嵌入于<a target=_blank href="/item/HTML">HTML</a>语言，它相对于其他语言。<a target=_blank href="/item/%E7%BC%96%E8%BE%91">编辑</a>简单，实用性强，更适合初学者。</div><div class="anchor-list">
+<a name="4_4" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4_4" class="lemma-anchor " ></a>
+<a name="跨平台性强" class="lemma-anchor " ></a>
+<a name="4-4" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>跨平台性强</h3>
+</div>
+<div class="para" label-module="para">由于PHP是运行在服务器端的<a target=_blank href="/item/%E8%84%9A%E6%9C%AC">脚本</a>，可以运行在<a target=_blank href="/item/UNIX">UNIX</a>、<a target=_blank href="/item/LINUX">LINUX</a>、<a target=_blank href="/item/WINDOWS">WINDOWS</a>、<a target=_blank href="/item/Mac%20OS">Mac OS</a>、<a target=_blank href="/item/Android/60243" data-lemmaid="60243">Android</a>等平台</div><div class="anchor-list">
+<a name="4_5" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4_5" class="lemma-anchor " ></a>
+<a name="效率高" class="lemma-anchor " ></a>
+<a name="4-5" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>效率高</h3>
+</div>
+<div class="para" label-module="para"><a target=_blank href="/item/PHP/9337" data-lemmaid="9337">PHP</a>消耗相当少的<a target=_blank href="/item/%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90">系统资源</a>。</div><div class="anchor-list">
+<a name="4_6" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4_6" class="lemma-anchor " ></a>
+<a name="图像处理" class="lemma-anchor " ></a>
+<a name="4-6" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>图像处理</h3>
+</div>
+<div class="para" label-module="para">用PHP动态创建<a target=_blank href="/item/%E5%9B%BE%E5%83%8F">图像</a>,PHP图像处理默认使用GD2。且也可以配置为使用image magick进行图像处理。</div><div class="anchor-list">
+<a name="4_7" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4_7" class="lemma-anchor " ></a>
+<a name="面向对象" class="lemma-anchor " ></a>
+<a name="4-7" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>面向对象</h3>
+</div>
+<div class="para" label-module="para">在php4,php5 中，面向对象方面都有了很大的改进，php完全可以用来开发大型商业程序。</div><div class="anchor-list">
+<a name="4_8" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_4_8" class="lemma-anchor " ></a>
+<a name="专业专注" class="lemma-anchor " ></a>
+<a name="4-8" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>专业专注</h3>
+</div>
+<div class="para" label-module="para">PHP支持脚本语言为主，同为类C语言。</div><div class="anchor-list">
+<a name="5" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_5" class="lemma-anchor " ></a>
+<a name="技术应用" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>技术应用</h2>
+</div>
+<ol class="custom_cn  para-list list-paddingleft-1"><li class="list-cn-1-1 list-cn-paddingleft-1"><div class="para" label-module="para"><a target=_blank href="/item/%E4%BC%AA%E9%9D%99%E6%80%81">伪静态</a></div>
+</li><li class="list-cn-1-2 list-cn-paddingleft-1"><div class="para" label-module="para"><a target=_blank href="/item/%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2">静态页面</a>生成</div>
+</li><li class="list-cn-1-3 list-cn-paddingleft-1"><div class="para" label-module="para"><a target=_blank href="/item/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a><a target=_blank href="/item/%E7%BC%93%E5%AD%98">缓存</a></div>
+</li><li class="list-cn-1-4 list-cn-paddingleft-1"><div class="para" label-module="para">过程缓存</div>
+</li><li class="list-cn-1-5 list-cn-paddingleft-1"><div class="para" label-module="para"><a target=_blank href="/item/div%2Bcss">div+css</a>w3c标准</div>
+</li><li class="list-cn-1-6 list-cn-paddingleft-1"><div class="para" label-module="para">大负荷</div>
+</li><li class="list-cn-1-7 list-cn-paddingleft-1"><div class="para" label-module="para"><a target=_blank href="/item/%E5%88%86%E5%B8%83%E5%BC%8F">分布式</a></div>
+</li><li class="list-cn-1-8 list-cn-paddingleft-1"><div class="para" label-module="para"><a target=_blank href="/item/flex">flex</a></div>
+</li><li class="list-cn-1-9 list-cn-paddingleft-1"><div class="para" label-module="para">桌面程序应用（不擅长）</div>
+</li><li class="list-cn-1-10 list-cn-paddingleft-1"><div class="para" label-module="para">支持<a target=_blank href="/item/MVC">MVC</a>模型</div>
+</li><li class="list-cn-1-11 list-cn-paddingleft-2"><div class="para" label-module="para"><a target=_blank href="/item/Smarty">Smarty</a>模版引擎</div>
+</li></ol><div class="para" label-module="para"></div><div class="anchor-list">
+<a name="6" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_6" class="lemma-anchor " ></a>
+<a name="参考手册" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>参考手册</h2>
+</div>
+<div class="para" label-module="para">函数完整参考手册：<sup class="sup--normal" data-sup="1">
+[1]</sup><a class="sup-anchor" name="ref_[1]_5828265">&nbsp;</a>
+</div>
+<table log-set-param="table_view" class="table-view log-set-param"><tr><th>序号</th><th>分类</th><th>描述</th></tr><tr><td valign="top" align="left" width="30">1</td><td valign="top" align="left" width="115">Array 函数</td><td valign="top" align="left" width="487">　</td></tr><tr><td valign="top" align="left" width="30">2</td><td valign="top" align="left" width="115">Calendar 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">日历扩展包含了简化不同日历格式间的转换的函数。</div>
+</td></tr><tr><td valign="top" align="left" width="30">3</td><td valign="top" align="left" width="115">Date/Time 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">Date/Time 函数用于从 PHP 脚本运行的服务器上获取日期和时间并进行格式化。</div>
+</td></tr><tr><td valign="top" align="left" width="30">4</td><td valign="top" align="left" width="115">Directory 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">Directory 函数用于获得关于目录及其内容的信息。</div>
+</td></tr><tr><td valign="top" align="left" width="30">5</td><td valign="top" align="left" width="115">Error/Logging 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">Error/Logging 函数用于对错误进行处理和记录。</div>
+</td></tr><tr><td valign="top" align="left" width="30">6</td><td valign="top" align="left" width="115">Filesystem 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">Filesystem 函数用于访问和操作文件系统。</div>
+</td></tr><tr><td valign="top" align="left" width="30">7</td><td valign="top" align="left" width="115">Filter 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">PHP 过滤器用于对来自非安全来源的数据（比如用户输入）进行验证和过滤。</div>
+</td></tr><tr><td valign="top" align="left" width="30">8</td><td valign="top" align="left" width="115">FTP 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">FTP 函数通过文件传输协议 (FTP) 提供对文件服务器的客户端访问。</div>
+</td></tr><tr><td valign="top" align="left" width="30">9</td><td valign="top" align="left" width="115">HTTP 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">HTTP 函数用于对由 Web 服务器发送到浏览器的信息进行操作。</div>
+</td></tr><tr><td valign="top" align="left" width="30">10</td><td valign="top" align="left" width="115">Libxml 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">Libxml 函数和常量与 SimpleXML、XSLT 以及 DOM 函数一起使用。</div>
+</td></tr><tr><td>11</td><td valign="top" align="left" width="115">Mail 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">mail() 函数用于从脚本中直接发送电子邮件。</div>
+</td></tr><tr><td>12</td><td valign="top" align="left" width="115">Math 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">Math 函数能处理 integer 和 float 范围内的值。</div>
+</td></tr><tr><td>13</td><td valign="top" align="left" width="115">杂项函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">我们把不属于其他类别的函数归纳到杂项函数类别。</div>
+</td></tr><tr><td>14</td><td valign="top" align="left" width="115">MySQLi 函数</td><td valign="top" align="left" width="487"><div class="para" label-module="para">MySQLi 函数用于访问 MySQL 数据库服务器。</div>
+</td></tr><tr><td>15</td><td valign="top" align="left" width="115">SimpleXML 函数</td><td valign="top" align="left" width="487">SimpleXML 扩展提供了一种获取 XML 元素的名称和文本的简单方式。</td></tr><tr><td>16</td><td valign="top" align="left" width="115">String 函数</td><td valign="top" align="left" width="487">　</td></tr><tr><td>17</td><td valign="top" align="left" width="115">XML Parser 函数</td><td valign="top" align="left" width="487">XML Parser 函数允许您创建 XML 解析器，并为 XML 事件定义句柄。</td></tr><tr><td>18</td><td valign="top" align="left" width="115">Zip File 函数</td><td valign="top" align="left" width="487">Zip File 函数允许您读取压缩文件。</td></tr></table><div class="anchor-list">
+<a name="7" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_7" class="lemma-anchor " ></a>
+<a name="版本区别" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>版本区别</h2>
+</div>
+<div class="para" label-module="para"><sup class="sup--normal" data-sup="2">
+[2]</sup><a class="sup-anchor" name="ref_[2]_5828265">&nbsp;</a>
+PHP版本VC6与VC9、Thread Safe与None-Thread Safe等的区别</div>
+<div class="para" label-module="para">PHP的大版本主要分三支：PHP4/PHP5/PHP6</div>
+<div class="para" label-module="para">其中，PHP4由于太古老、对QQ支持不力已基本被淘汰，请无视PHP4。</div>
+<div class="para" label-module="para">PHP6由于基本没有生产线上的应用，还基本只是一款概念产品，很多功能已在PHP5.3.3上实现，所以也不详述，请无视PHP6。</div>
+<div class="para" label-module="para">PHP5的版本主要分四支：PHP5.2之前的版本、PHP5.2.X、PHP5.3和日前发布的PHP5.4。</div><div class="anchor-list">
+<a name="7_1" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_7_1" class="lemma-anchor " ></a>
+<a name="选择版本" class="lemma-anchor " ></a>
+<a name="7-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>选择版本</h3>
+</div>
+<div class="para" label-module="para">PHP5.2之前的版本不值得考虑，因为某些功能缺陷或者BUG。PHP5.4还处于Beta试用的版本号，非稳定版本，请无视PHP5.4。</div>
+<div class="para" label-module="para">主流PHP程序对PHP5.2.X的兼容性最好，而每次版本号的升级带来的都是安全性和稳定性的改善，所以宜挑选最新的版本。目前PHP5.2系列最新的是PHP5.2.17。</div>
+<div class="para" label-module="para">而如果产品是自己开发自己使用，PHP5.3在某些方面更具优势，在稳定性上更胜一筹，增加了很多PHP5.2所不具有的功能，比如内置php-fpm、更完善的垃圾回收算法、命名空间的引入、sqlite3的支持等等，是部署项目值得考虑的版本，强烈推荐PHP5.3.3。</div>
+<div class="para" label-module="para">除了版本号的不同，同一版本号的PHP版本也有区别，并且在选择PHP扩展的时候需要注意。</div>
+<ul class="custom_dot para-list list-paddingleft-1"><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">install版：可执行的MSI格式安装包。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">ZIP版：解压即可用。和install版无区别。建议选择ZIP版。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">DEBUG版：最终用户无需关心。</div>
+</li></ul><div class="anchor-list">
+<a name="7_2" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_7_2" class="lemma-anchor " ></a>
+<a name="VC6与VC9" class="lemma-anchor " ></a>
+<a name="7-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>VC6与VC9</h3>
+</div>
+<div class="para" label-module="para">如果你在apache1或者apache2下使用PHP，你应该选择VC6的版本</div>
+<div class="para" label-module="para">如果你在IIS下使用PHP应该选择VC9的版本，VC6的版本使用visual studio6编译，VC9使用Visual Studio 2008编译，并且改进了性能和稳定性。VC9版本的PHP需要你安装Microsoft 2008 C++ Runtime。不要在apache下使用VC9的版本。</div><div class="anchor-list">
+<a name="7_3" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_7_3" class="lemma-anchor " ></a>
+<a name="TS和NTS" class="lemma-anchor " ></a>
+<a name="7-3" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>TS和NTS</h3>
+</div>
+<div class="para" label-module="para">TS指Thread Safety，即线程安全，一般在IIS以ISAPI方式加载的时候选择这个版本。</div>
+<div class="para" label-module="para">NTS即None-Thread Safe，一般以fast cgi方式运行的时候选择这个版本，具有更好的性能。</div>
+<div class="para" label-module="para">从2000年10月20日发布的第一个Windows版的PHP3.0.17开始的都是线程安全的版本，这是由于与Linux/Unix系统是采用多进程的工作方式不同的是Windows系统是采用多线程的工作方式。如果在IIS下以CGI方式运行PHP会非常慢，这是由于CGI模式是建立在多进程的基础之上的，而非多线程。一般我们会把PHP配置成以ISAPI的方式来运行，ISAPI是多线程的方式，这样就快多了。但存在一个问题，很多常用的PHP扩展是以Linux/Unix的多进程思想来开发的，这些扩展在ISAPI的方式运行时就会出错搞垮IIS。因此在IIS下CGI模式才是 PHP运行的最安全方式，但CGI模式对于每个HTTP请求都需要重新加载和卸载整个PHP环境，其消耗是巨大的。</div>
+<div class="para" label-module="para">为了兼顾IIS下PHP的效率和安全，微软给出了FastCGI的解决方案。FastCGI可以让PHP的进程重复利用而不是每一个新的请求就重开一个进程。同时FastCGI也可以允许几个进程同时执行。这样既解决了CGI进程模式消耗太大的问题，又利用上了CGI进程模式不存在线程安全问题的优势。</div>
+<div class="para" label-module="para">因此，如果是使用ISAPI的方式来运行PHP就必须用Thread Safe(线程安全)的版本；而用FastCGI模式运行PHP的话就没有必要用线程安全检查了，用None Thread Safe(NTS，非线程安全)的版本能够更好的提高效率。</div><div class="anchor-list">
+<a name="7_4" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_7_4" class="lemma-anchor " ></a>
+<a name="查看版本" class="lemma-anchor " ></a>
+<a name="7-4" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>查看版本</h3>
+</div>
+<div class="para" label-module="para">一个很简单的办法就是phpinfo();</div>
+<div class="para" label-module="para">Thread Safety disabled是NTS，enabled是TS</div>
+<div class="para" label-module="para">Configure Command看到VC98字样的是VC6，Compiler标明 MSVC9 (Visual C++ 2008) 的是VC9</div>
+<div class="para" label-module="para">在WIN7下：IIS7+NTS+FastCGI+vc9 是最佳搭档或者apache+fastcgi+nts+vc6。</div>
+<div class="para" label-module="para">在WINXP下：Apache+TS+Apache module +vc6最合适的搭档。</div><div class="anchor-list">
+<a name="8" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_8" class="lemma-anchor " ></a>
+<a name="PHP3" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>PHP3</h2>
+</div>
+<div class="para" label-module="para"><div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/PHP/9337/0/263e802fd5e0197b1e308909?fr=lemma&ct=single" target="_blank"
+		title="PHP" style="width:220px;height:219px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=762a4c5dd21b0ef468e89f5cedc551a1/cefc1e178a82b9019878c740738da9773812efe8.jpg"  alt="PHP" style="width:220px;height:219px;"/>
+</a>
+<span class="description">
+PHP
+</span>
+</div>PHP3跟Apache<a target=_blank href="/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>的紧密结合的特性；加上它可以不断的更新及加入新的功能，而且几乎支持所有主流与非主流数据库。再以它能高速的执行效率，使得PHP在1999年中的使用站点已经超过了150000。加上它的源代码完全公开，在 Open Source意识抬头的今天，它更是这方面的中流砥柱。不断地有新的<a target=_blank href="/item/%E5%87%BD%E6%95%B0">函数</a>库加入，以及不停地更新的活力。使得PHP无论在UNIX、LINUX或是Windows的平台上都可以有更多新的功能。它提供丰富的函数，使得在<a target=_blank href="/item/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">程序设计</a>方面有着更好的支持。</div><div class="anchor-list">
+<a name="9" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_9" class="lemma-anchor " ></a>
+<a name="PHP4" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>PHP4</h2>
+</div>
+<div class="anchor-list">
+<a name="9_1" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_9_1" class="lemma-anchor " ></a>
+<a name="简介" class="lemma-anchor " ></a>
+<a name="9-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>简介</h3>
+</div>
+<div class="para" label-module="para">PHP4.0整个<a target=_blank href="/item/%E8%84%9A%E6%9C%AC%E7%A8%8B%E5%BA%8F">脚本程序</a>的核心大幅更动，让程序的执行速度，满足更快的要求。在最佳化之后的效率，已较传统<a target=_blank href="/item/CGI">CGI</a>或者<a target=_blank href="/item/ASP">ASP</a>等程序有更好的表现。而且还有更强的新功能、更丰富的函数库。无论您接不接受，PHP 都将在 Web CGI 的领域上，掀起巅覆性的革命。对于一位专业的Web Master 而言，它将也是必修课程之一。</div>
+<div class="para" label-module="para">PHP 4.0是更有效的，更可靠的动态Web页开发工具，在大多数情况运行比 PHP 3.0要快，其脚本描述更强大并且更复杂，最显著的特征是速率比的增加。PHP4.0这些优异的性能是PHP<a target=_blank href="/item/%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E">脚本引擎</a>重新设计产生的结果：引擎由AndiGutmans和Zeev Suraski从底层全面重写。PHP4.0 脚本引擎 ——<a target=_blank href="/item/Zend">Zend</a>引擎，使用了一种更有效的编译——执行方式,而不是PHP 3.0 采用的执行 ——当解析时<a target=_blank href="/item/%E6%A8%A1%E5%9E%8B">模型</a>。</div><div class="anchor-list">
+<a name="9_2" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_9_2" class="lemma-anchor " ></a>
+<a name="优越性" class="lemma-anchor " ></a>
+<a name="9-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>优越性</h3>
+</div>
+<div class="para" label-module="para">PHP4在3.0版的基础上增加或增强了许多有用的特征，主要如下：</div>
+<div class="para" label-module="para">（1）别名：在PHP4中，可以利用引用为变量赋值，这给<a target=_blank href="/item/%E7%BC%96%E7%A8%8B">编程</a>带来了很大的灵活性。</div>
+<div class="para" label-module="para">（2）扩充了<a target=_blank href="/item/API">API</a>模块：PHP 4.0 为扩展的 API 模块的提供了扩展PHP接口模块，它比旧的 API 版本显著地快。PHP 模块已有的及最常用的接口多数被转换到使用这个扩展的接口。</div>
+<div class="para" label-module="para">（3）自动资源释放：PHP4增加了引用计数功能，这种新技术的引入使PHP4具有了自动<a target=_blank href="/item/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">内存管理</a>功能，减轻了开发人员的负担。</div>
+<div class="para" label-module="para">（4）<a target=_blank href="/item/%E5%B8%83%E5%B0%94">布尔</a>类型：PHP 4.0 支持布尔类型。</div>
+<div class="para" label-module="para">（5）进程生成：在 UNIX 环境下的 PHP 4.0 提供了一个很智能和通用的生成进程，使用了一种名为基于automake/libtool的系统生成技术。</div>
+<div class="para" label-module="para">（6）COM/DCOM 支持：PHP 4.0 提供 COM/DCOM 支持 ( 仅用于Windows 环境 ) 可以无缝地存取和访问 COM 对象。</div>
+<div class="para" label-module="para">（7）与PHP 3.0 兼容性很好：PHP 4.0 是与 PHP 3.0 代码向后<a target=_blank href="/item/%E5%85%BC%E5%AE%B9%E6%80%A7">兼容性</a>接近100%。由于 PHP 4 的改进的体系结构，两者有一些细微的差别，但是大多数人将可能永远不可能遇上这种情况。</div>
+<div class="para" label-module="para">（8）配置：PHP4重新设计和增强了PHP.ini文件，这使得用PHP.ini来<a target=_blank href="/item/%E9%85%8D%E7%BD%AE">配置</a>PHP显得极为容易，这个文件可以在运行时被Apache(unix系统）或由Windows 注册（Windows 环境）。</div>
+<div class="para" label-module="para">（9）加密支持：PHP4实现了完整的加密，这些加密功能是一个完整的mycrypt库，并且 PHP 4.0 支持哈希函数。Blowfish，TripleDES,MD5，并且SHA1 也是可使用的一些加密算法。</div>
+<div class="para" label-module="para">（10）类型检查：PHP 4.0 支持同一操作符用于评类型检查：===(3 等号<a target=_blank href="/item/%E8%BF%90%E7%AE%97%E7%AC%A6">运算符</a>，恒等计算符），为在两个值和其类型之间作检查。例如，&#39;3&#39; ===3 将视为假 ( 类型是不同的），而 3 ==3 ( 相等判断，不比较类型 ) 将视为真。</div>
+<div class="para" label-module="para">（11）FTP 支持：PHP 4.0 支持 FTP。通常，你会为通过一个调制解调器连接下载一个大文件提供一个接口。然而，如果你确实有需要，可以使用PHP。</div>
+<div class="para" label-module="para">（12）PHP4新增函数或功能增强函数：PHP 4.0 新增了许多<a target=_blank href="/item/%E5%87%BD%E6%95%B0">函数</a>，同时也将许多现有的函数功能进行了增强，以下是一些例子。<a target=_blank href="/item/array_count_values">array_count_values</a>() eval() foreach() include() ob_end_clean() ob_end_flush() ob_get_contents() ob_start()<a target=_blank href="/item/strip_tags">strip_tags</a>() unset（）。</div>
+<div class="para" label-module="para">（13）here打印：PHP 4.0 的Here打印是与Perl类似的，尽管完全不相同。Here是打印大容量文章的一个有用的方法，例如在<a target=_blank href="/item/HTML%E6%96%87%E4%BB%B6">HTML文件</a>中，不会漏掉任何一个字符，例如目录标记。</div>
+<div class="para" label-module="para">（14）HTTP Session fallback 系统：为 HTTP Session管理的一个 fallback 系统在 PHP 4.0被实现。缺省情况下，Session标识符由cookies存储。如果没有cookies支持或一项cookies任务失败，Session标识符自动被创建并在 URL 的查询字符串中被携带。</div>
+<div class="para" label-module="para">（15）ISAPI 支持：PHP 4.0 能作为一个<a target=_blank href="/item/%E4%B8%AA%E6%80%A7%E5%8C%96">个性化</a>的 ISAPI 模块作为<a target=_blank href="/item/IIS">IIS</a>插件。这比 PHP 3.0 更有效，它作为一个外部的程序来运行。</div>
+<div class="para" label-module="para">（16）内存：PHP 4.0 能更有效的使用<a target=_blank href="/item/%E5%86%85%E5%AD%98">内存</a>，导致较少的内存占用消耗，这主要归功于引用计数技术的实现。⒄其他类<a target=_blank href="/item/%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0">成员函数</a>：在 PHP 4.0 你能在成员函数本身的作用域或全局范围内调用其他类的成员函数。例如，你能用一个子<a target=_blank href="/item/%E5%87%BD%E6%95%B0%E8%A6%86%E7%9B%96">函数覆盖</a>父函数，并在子函数中调用父函数。</div>
+<div class="para" label-module="para">（17）多维<a target=_blank href="/item/%E6%95%B0%E7%BB%84">数组</a>：在 PHP 4.0 ，利用GET，POST,Cookies的进行的数据传输支持多维数组。</div>
+<div class="para" label-module="para">（18）个性化的 HTTP<a target=_blank href="/item/Session">Session</a>支持：HTTP Session处理，包括 fallback<a target=_blank href="/item/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86">系统管理</a>，在 PHP 4.0被它的新库函数实现。在版本 3.0 中处理Session要求使用 PHPLIB 和<a target=_blank href="/item/%E7%AC%AC%E4%B8%89%E6%96%B9">第三方</a>的库函数，它比把Session直接地由 PHP 支持慢了许多。</div>
+<div class="para" label-module="para">（19）个性化的 Java 支持：PHP 4.0 支持和java的交互。这种个性化的Java 支持为PHP 在 Java 对象上创建和使用方法提供一个简单并且有效的工具。</div>
+<div class="para" label-module="para">（20）对象和数嵌套组：PHP 4.0 实现了功能更加强大的对象，移去了 PHP 3.0存在的种种句法限制。对象能在数组以内被嵌套并且反过来也如此，可以根据你的需要实现嵌套。</div>
+<div class="para" label-module="para">（21）面向对象的<a target=_blank href="/item/%E7%BC%96%E7%A8%8B">编程</a>：PHP 4.0 为面向对象的编程和构造类及对象提供扩展的功能和新特征。PHP4实现了对象重载，引用技术等新技术。</div>
+<div class="para" label-module="para">（22）对象<a target=_blank href="/item/%E9%87%8D%E8%BD%BD">重载</a>支持：对象重载语法允许第三方的基于面向对象的类库使用 PHP4 的面向对象的特征存取他们自身的功能。使用这个特征的一个 COM 模块已经被实现了。</div>
+<div class="para" label-module="para">（23）输出缓冲支持：PHP 提供了一个输出缓冲函数集合。输出缓冲支持允许你写<a target=_blank href="/item/%E5%8C%85%E8%A3%B9%E5%87%BD%E6%95%B0">包裹函数</a>功能压缩<a target=_blank href="/item/%E7%BC%93%E5%86%B2%E5%8C%BA">缓冲区</a>。在 PHP4 的输出缓冲支持允许 HTML 头信息存放，无论 HTML的正文是否输出。头信息（ (header(),content type,and cookies ) 不采用缓冲。</div>
+<div class="para" label-module="para">（24）增加了<a target=_blank href="/item/PCRE">PCRE</a>库：PHP 4.0 包括一个 Perl 兼容的<a target=_blank href="/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a>(PCRE ) 库，和正常regex库一起与 PHP 绑定。split 和replace PCRE 功能被支持。PCRE 和 Perl 正规表达式之间有一些细微差别。</div>
+<div class="para" label-module="para">（25)PHP.ini 文件：PHP.ini文件在 PHP4.0 被重新设计，使用的 PHP 的配置PHP.ini是更容易并且更有效的。全部文件能被Apache 在运行时间操作 ( 在 Apache环境 下 ) 或由 Windows 注册表 ( 在 Windows 下面 ）。被加入PHP.ini文件的配置指令自动地在所有相关的模块中被支持。</div>
+<div class="para" label-module="para">（26）引用计数：PHP 4.0 为系统中的每个数值提供了引用计数，包括资源。一旦一个资源不再被任何变量引用，它自动地被释放以节省内存资源。利用这个特征的最明显的例子一个内置SQL查询的循环语句。在PHP 3.0中 ，每次递归另外的 SQL 结果集合重复申请内存，直到脚本执行完毕，这些结果集合占用的内存才被释放。</div>
+<div class="para" label-module="para">（27）支持引用：通过引用可以改变一个变量的值。</div>
+<div class="para" label-module="para">（28）函数的运行时绑定：PHP 4.0 的运行时间绑定功能允许你在他们被声明以前调用，无论声明是否在代码以后或是在运行时间。</div>
+<div class="para" label-module="para">（29）类的运行时信息：PHP 4.0 支持在运行时刻存取下列类信息：一个对象的类名，一个对象的父类的类名字，以及对象函数所在的名字。</div>
+<div class="para" label-module="para">（30）<a target=_blank href="/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>抽象层：为支持Web服务器提供了增强型 SAPI ( 服务器 API ) 接口，是 PHP 4.0 不可分的一部分。这个服务器抽象层，提供了通用的<a target=_blank href="/item/WEB%E6%9C%8D%E5%8A%A1%E5%99%A8">WEB服务器</a>接口支持，支持<a target=_blank href="/item/%E5%A4%9A%E7%BA%BF%E7%A8%8B">多线程</a>WEB服务器，为大多数的WEB服务器提供透明的支持，这些服务器包括 Apache,IIS ( ISAPI ），以及 AOL 服务器。</div>
+<div class="para" label-module="para">（31）语法的点亮显示：PHP 4.0 语法的点亮显示允许开发者看见源代码而不是脚本，这个功能比PHP 3.0中的更有效。它跑得更快，更执行得更好，并且产生更紧凑的HTML代码。</div>
+<div class="para" label-module="para">（32）由引用改变<a target=_blank href="/item/%E5%8F%98%E9%87%8F">变量</a>的值：PHP 4.0 由引用支持可变的赋值，“关联”的2个变量之中个的任何一个的值被改变，另外的变量的值同样被改变，这类似与C中的指针类型。</div>
+<div class="para" label-module="para">（33）在引用字符串中的变量引用：PHP 4.0 增强了在引用字符串中的变量引用。</div><div class="anchor-list">
+<a name="10" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_10" class="lemma-anchor " ></a>
+<a name="PHP5" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>PHP5</h2>
+</div>
+<div class="para" label-module="para">PHP5在长时间的开发及多个预发布版本后，2004年7月13日，PHP5.0发布。该版本以<a target=_blank href="/item/Zend%E5%BC%95%E6%93%8E">Zend引擎</a>Ⅱ为引擎，并且加入了新功能如PHP Data Objects（<a target=_blank href="/item/PDO">PDO</a>）。PHP5.0版本强化更多的功能。首先，完全实现面向对象，提供名为<b>PHP兼容模式</b>的功能。其次是XML功能，PHP5.0版本支持可直观地访问XML数据、名为SimpleXML的XML处理用界面。同时还强化了<a target=_blank href="/item/XML">XML</a>Web服务支持，而且标准支持SOAP扩展模块。数据库方面，PHP新版本提供旨在访问MySQL的新界面——<b>MySQL</b>。除此前的界面外，还可以使用面向对象界面和预处理语句（Prepared Statement）等MySQL的新功能．另外，PHP5.0上还捆绑有小容量RDBMS-SQLite．</div><div class="anchor-list">
+<a name="10_1" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_10_1" class="lemma-anchor " ></a>
+<a name="新对象模式" class="lemma-anchor " ></a>
+<a name="10-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>新对象模式</h3>
+</div>
+<div class="para" label-module="para">*<a target=_blank href="/item/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">构造函数</a>和<a target=_blank href="/item/%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0">析构函数</a> * 对象的引用 * 对象的克隆 * 对象中的私有、公共及受保护模式 * 接口 (Interfaces)</div>
+<div class="para" label-module="para">* 抽象类 * __call * __set 和 __get * 静态成员</div>
+<div class="para" label-module="para"><b>构造函数和析构函数</b></div>
+<div class="para" label-module="para">在 PHP4 中，当函数与对象同名时，这个函数将成为该对象的构造函数，并且在 PHP4 中没有析构函数的概念。</div>
+<div class="para" label-module="para">在 PHP5 中，构造函数被统一命名为 __construct，并且引入了析构函数的概念，被统一命名为 __destruct。</div>
+<div class="para" label-module="para">对象的引用</div>
+<div class="para" label-module="para">在PHP4中，传递变量给一个函数或方法，实际是把这个变量做了一次复制，也就意味着你传给函数或方法的是这个变量的一个副本，除非你使用了引用符号“&amp;；” 来声明是要做一个引用，而不是一个 Copy。在 PHP5中，对象总是以引用的形式存在的，对象中的赋值操作同样也都是一个引用操作。</div>
+<div class="para" label-module="para">对象的克隆</div>
+<div class="para" label-module="para">当一个对象始终以引用的形式来被调用时，如果我想得到该对象的一个副本，该怎么办呢？PHP5 提供了一个新的功能，就是对象的克隆，语法为 __clone。</div>
+<div class="para" label-module="para"><b>抽象</b><a target=_blank href="/item/%E7%B1%BB">类</a></div>
+<div class="para" label-module="para">抽象类不能被实例化。</div>
+<div class="para" label-module="para">抽象类与其它类一样，允许定义变量及方法。</div>
+<div class="para" label-module="para">抽象类同样可以定义一个抽象的方法，抽象类的方法不会被执行，不过将有可能会在其派生类中执行。</div>
+<div class="para" label-module="para"><b>__call</b></div>
+<div class="para" label-module="para">PHP5 的对象新增了一个专用方法 __call（），这个方法用来监视一个对象中的其它方法。如果你试着调用一个对象中不存在的方法，__call 方法将会被自动调用。</div>
+<div class="para" label-module="para"><b>__set 和 __get</b></div>
+<div class="para" label-module="para">这是一个很棒的方法，__set 和 __get 方法可以用来捕获一个对象中不存在的变量和方法。</div>
+<div class="para" label-module="para"><b>类型指示</b></div>
+<div class="para" label-module="para">在 PHP5 中，你可以在对象的方法中指明其参数必须为另一个对象的实例。</div>
+<div class="para" label-module="para">静态成员</div>
+<div class="para" label-module="para">静态成员和静态方法在面象对象编程的术语中被称作 “类方法（class methods）” 和 “类变量（class variables）”。</div>
+<div class="para" label-module="para">“类方法” 在一个对象没有实例化前允许被调用。同样，“类变量” 在一个对象没有实例化前可以被独立操作控制（不需要用一个对象的方法来控制）。</div><div class="anchor-list">
+<a name="10_2" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_10_2" class="lemma-anchor " ></a>
+<a name="异常处理" class="lemma-anchor " ></a>
+<a name="10-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>异常处理</h3>
+</div>
+<div class="para" label-module="para">异常处理是公认的处理<a target=_blank href="/item/%E7%A8%8B%E5%BA%8F%E9%94%99%E8%AF%AF">程序错误</a>的理想方法，在 <a target=_blank href="/item/Java/85979" data-lemmaid="85979">Java</a>及 C 中都有这个概念，我们欣喜的看到，在 PHP5 已经加入了这方面的应用。你可以尝试使用 “try” 和 “catch” 来控制程序的错误。当有错误发生的时候，代码会把错误交给 “catch” 子句来处理，在 “catch” 子句中，你需要指明要把错误交给某个对象处理，这样做可以使代码结构看起来更清晰，因为我们可以把所有的错误信息交给一个对象来处理。</div>
+<div class="para" label-module="para"><b>自定义错误处理</b></div>
+<div class="para" label-module="para">你可以很方便的用自定义的处理错误的代码来控制你的程序中的意外。你仅仅需要从异常类中派生出一个自己的错误控制类，在你自己的错误控制类中，你需要有一个构造函数和一个 getMessage 方法。</div><div class="anchor-list">
+<a name="10_3" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_10_3" class="lemma-anchor " ></a>
+<a name="命名空间" class="lemma-anchor " ></a>
+<a name="10-3" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>命名空间</h3>
+</div>
+<div class="para" label-module="para">名称空间对类的分组或函数分组很有用。它可以把一些相关的类或函数给组合到一起，方便以后调用。</div>
+<div class="para" label-module="para">例：名称空间</div>
+<pre class="brush: php">&lt;?php
+namespacemy\name;//参考&quot;定义命名空间&quot;小节
+classMyClass{}
+functionmyfunction(){}
+constMYCONST=1;
+$a=newMyClass;
+$c=new\my\name\MyClass;//参考&quot;全局空间&quot;小节
+$a=strlen(&#39;hi&#39;);//参考&quot;使用命名空间：后备全局函数/常量&quot;小节
+$d=namespace\MYCONST;//参考&quot;namespace操作符和__NAMESPACE__常量”小节
+$d=__NAMESPACE__.&#39;\MYCONST&#39;;
+echoconstant($d);//参考&quot;命名空间和动态语言特征&quot;小节
+?&gt;
+</pre><div class="para" label-module="para">注意你需要在何种情况下使用名称空间，在实际运用中，你可能会需要声明两个或多个名称一样的对象来做不同的事情，那么你就可以把他们分别放到不同的名称空间中去（但接口是要相同的）。</div><div class="anchor-list">
+<a name="10_4" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_10_4" class="lemma-anchor " ></a>
+<a name="加密" class="lemma-anchor " ></a>
+<a name="10-4" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>加密</h3>
+</div>
+<div class="para" label-module="para">从PHP5.3开始支持ZendGuard加密方式，必须安装Zend Guard Loader，老的zend optimizer将不被支持。</div>
+<div class="para" label-module="para">Linux安装Zend Guard Loader支持的过程:</div>
+<div class="para" label-module="para">操作系统为CentOS5.5，PHP版本为5.3.8（CentOS5.5中的PHP默认版本较低，如果要升级到PHP最新版，可以使用remi的report源进行升级）。</div>
+<div class="para" label-module="para">Windows 下面的 Zend Guard Loader 不支持php5.3.8 VC9 x86 Thread Safe而，php5.3.8 VC9 x86 Non Thread Safe 又不支持 apache。所以安装的话，就需要安装在iis或者和nginx搭配。</div>
+<div class="para" label-module="para">1、下载最新的Linux操作系统系下的Zend Guard Loader。</div>
+<div class="para" label-module="para">2、上传至Linux服务器并解压缩，注意阅读生成目录下的README文件。全文如下（添加必要的注释）。在/etc/php.d/目录下创建文件zend.ini,内容如下：</div>
+<pre class="brush: plain">zend_extension=/usr/lib64/php/modules/ZendGuardLoader.so
+</pre><div class="para" label-module="para">注意路径一定要写上，刚开始没写路径，老是加载不上ZendGuardLoader .so，也可以直接将上面的配置写入/etc/php.ini文件中，效果一样。</div>
+<div class="para" label-module="para">3、重启httpd服务：service httpd restart。</div>
+<div class="para" label-module="para">4.输出&lt;?php phpinfo(); ?&gt;</div>
+<div class="para" label-module="para"><b>PHP 5.5 正式版发布 不再支持 <a target=_blank href="/item/Windows%20XP">Windows XP</a></b></div>
+<div class="para" label-module="para">同时 PHP 开发者也提醒用户，PHP 5.5 也包含一些不向后兼容的内容，包括：不再支持 Windows XP 和 2003 系统；不区分大小写的匹配函数、类；常数名称跟 Locale 无关，这对一些使用非 ASCII 代码的常量名的开发者需要注意的。</div><div class="anchor-list">
+<a name="11" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_11" class="lemma-anchor " ></a>
+<a name="版本6设想" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>版本6设想</h2>
+</div>
+<div class="para" label-module="para">1、<b>支持<a target=_blank href="/item/Unicode">Unicode</a></b>。Unicode是有其必然，虽然Unicode占用较多的空间，但Unicode带来的便利性，远超过占用空间的缺点，尤其在国际化的今天，硬件设备越来越强大，<a target=_blank href="/item/%E7%BD%91%E9%80%9F">网速</a>也大幅度的提升，这么一点小小的缺点是可以忽略的。另外一点，PHP也可以在.ini文件中设定能不能开启支持Unicode，决定权在你自己，这是一个不错的点子，关掉Unicode的支持，PHP的性能并不会有大幅度的提升，主要的影响在于需要引用字符串的函数。</div>
+<div class="para" label-module="para">2、<b>Register Globals 将被移除</b>这是一个主要的决定，老的PHP使用者会觉得Register Globals满方便的，但是却忽略了Register Globals会带来程序上安全性的隐患，大多数的主机上此项功能是关闭的，印象中从PHP4.3.x版开始，此项默认配置值即是关闭状态，PHP6正式移除Register Globals也代表着如果程序是PHP3时代的产物，将完全不能运用，除了改写用途外，别无他法。</div>
+<div class="para" label-module="para">3、<b>Magic Quotes 将取消</b>Magic Quotes主要是自动转义须要转义的字符，此项功能移除也符合大多数PHP开发者的心声。</div>
+<div class="para" label-module="para">4、<b>Safe Mode 取消</b>。老实说，这个模式不知道哪里不好，取消就取消吧，反正也用不到。</div>
+<div class="para" label-module="para">5、<b>’var’ 别名为 ‘public’</b>，在类中的var声明变成public的别名，相信是为了兼容PHP5而作的决定，PHP6现在也可以称作为OO语言了。</div>
+<div class="para" label-module="para">6、<b>通过引用返回将出错</b>未来通过引用返回编译器将会报错 例如$a =&amp; new b()、function &amp;c()，OO语言默认就是引用，所以不须要再运用 &amp;了。</div>
+<div class="para" label-module="para">7、<b>zend.ze1 compatbility mode 将被移去</b>（Zend.ze1相容模式将被移去），PHP5是为兼容旧有PHP4，所以在.ini中可选择是否开启相容模式，原由在于PHP5运用的是第二代分析引擎，但是相容模式并不是百分之百能分析 PHP4语法，所以旧时代的产物，移除。</div>
+<div class="para" label-module="para">8、<b>Freetype 1 and GD 1 support 将不见</b>这两个Libs存在了很久，php6将不再支持，况且GD1早已被现在的GD2取代了。</div>
+<div class="para" label-module="para">9、<b>dl() 被移到 SAPI 中dl()主要是让设计师加载extension Libs</b>，被移到 SAPI 中。</div>
+<div class="para" label-module="para">10、<b>Register Long Array 去除 从PHP5起默认是关闭</b>，在PHP6中正式移除。</div>
+<div class="para" label-module="para">11、<b>一些Extension的变更例如 XMLReader 和 XMLWriter 将不再是以Extension的方式出现</b>，他们将被移入到PHP的核心之中，并且默认是开启，<a target=_blank href="/item/ereg">ereg</a>extension将被放入PECL，代表着它将被移出PHP核心，这也是为了让路给新的<a target=_blank href="/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a>extension，此外，Fileinfo extension 也将被导入PHP的核心之中。</div>
+<div class="para" label-module="para">12、<b>APC将被导入核心</b>这是一个提高PHP性能的功能，它将被放入PHP核心中，并且可以选择是否启用APC。</div>
+<div class="para" label-module="para">13、<b>告别ASP风格的起始标签</b>原来是为了取悦ASP开发者转向运用 PHP，现今已经不再须要这种做法了。</div>
+<div class="para" label-module="para">最后，别期望PHP6的性能可以彻底超过PHP5，有可能PHP6的执行效率会比PHP5还要来得慢，但是可以预期的是，PHP开发小组将会努力的完善PHP6，超越PHP5。</div><div class="anchor-list">
+<a name="12" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_12" class="lemma-anchor " ></a>
+<a name="环境配置" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>环境配置</h2>
+</div>
+<div class="anchor-list">
+<a name="12_1" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_12_1" class="lemma-anchor " ></a>
+<a name="Windows下" class="lemma-anchor " ></a>
+<a name="12-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>Windows下</h3>
+</div>
+<div class="para" label-module="para"><b>软件需求（最新版）</b></div>
+<div class="para" label-module="para">Windows Vista 或更高版本；</div>
+<div class="para" label-module="para">Apache 2+ 或 IIS 6+ 或 Nginx</div><div class="anchor-list">
+<a name="12_2" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_12_2" class="lemma-anchor " ></a>
+<a name="安装过程" class="lemma-anchor " ></a>
+<a name="12-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>安装过程</h3>
+</div>
+<ol class="custom_num para-list list-paddingleft-1"><li class="list-num-1-1 list-num-paddingleft-1"><div class="para" label-module="para">将 Apache 1.3.19 安装到 C:\Web\apache\ 目录下。</div>
+</li><li class="list-num-1-2 list-num-paddingleft-1"><div class="para" label-module="para">将 PHP 4.0.5 解压到 C:\Web\php\ 目录下。</div>
+</li><li class="list-num-1-3 list-num-paddingleft-1"><div class="para" label-module="para">将 MySQL 3.23.38 安装到 C:\Web\mysql\ 目录下。</div>
+</li><li class="list-num-1-4 list-num-paddingleft-1"><div class="para" label-module="para">将 C:\web\php\php4ts.dll 文件拷贝到 C:\WINNT\system32\ 目录下。</div>
+</li><li class="list-num-1-5 list-num-paddingleft-1"><div class="para" label-module="para">将 C:\web\php\php.exel 文件拷贝到 C:\WINNT\ 目录下。</div>
+</li><li class="list-num-1-6 list-num-paddingleft-1"><div class="para" label-module="para">将 C:\web\php\php.ini-dist 文件拷贝到 C:\WINNT\ 目录下，并将php.ini-dist 更名为 php.ini。</div>
+</li><li class="list-num-1-7 list-num-paddingleft-1"><div class="para" label-module="para">运行 C:\Web\apache\Apache\<a target=_blank href="/item/Apache">Apache</a>.exe-i –n</div>
+</li><li class="list-num-1-8 list-num-paddingleft-1"><div class="para" label-module="para">运行 C:\Web\mysql\bin\<a target=_blank href="/item/mysqld-nt.exe">mysqld-nt.exe</a>--install</div>
+</li><li class="list-num-1-9 list-num-paddingleft-1"><div class="para" label-module="para">编辑 C:\WINNT\php.ini</div>
+</li></ol><div class="para" label-module="para">找到 “extension_dir = ./ ” 字段，将其改为 extension_dir = &quot;C:\myphp\php\extensions&quot;。</div>
+<div class="para" label-module="para">编辑 C:\Web\apache\Apache\conf\httpd.conf</div>
+<div class="para" label-module="para">找到“ #BindAddress*” 字段</div>
+<div class="para" label-module="para">将其改为 BindAddress<a target=_blank href="/item/127.0.0.1">127.0.0.1</a>。（如果主机有<a target=_blank href="/item/%E5%9B%BA%E5%AE%9AIP%E5%9C%B0%E5%9D%80">固定IP地址</a>，此处改为主机IP地址。如 BindAddress 211.101.152.106），找到 “ServerName” 字段，将其改为 ServerName localhost。（如主机有固定主机名，此处改为主机的主机名。如ServerName bn001）。</div>
+<div class="para" label-module="para">找到“ ScriptAlias /cgi-bin/ &quot;C:/Web/apache/Apache/cgi-bin/&quot; ” 字段，在其下面加入 ScriptAlias /php/ &quot;C:/Web/php/&quot;。找到 “# And for PHP 4.x,use: ” 字段，在其后面加入：</div>
+<pre class="brush: plain">AddTypeapplication/x-httpd-php
+ActionApplication/x-httpd-php&quot;c:/Web/php/php.exe&quot;
+</pre><div class="para" label-module="para">找到“ #LoadModule usertrack_module modules/mod_usertrack so” 字段，LoadModule php4_module c:/web/php/sapi/php4apache.dll</div><div class="anchor-list">
+<a name="12_3" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_12_3" class="lemma-anchor " ></a>
+<a name="UNIX下" class="lemma-anchor " ></a>
+<a name="12-3" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">PHP</span>UNIX下</h3>
+</div>
+<div class="para" label-module="para"><b>所需软件</b></div>
+<div class="para" label-module="para">php-3.0.14-win32.zip；php-3.0.14-win32.zip；mysql-shareware-3.22.32-win.zip</div>
+<div class="para" label-module="para">所有软件均安装在/export/home/guoj/下，也可在其他目录。</div>
+<div class="para" label-module="para">安装mysql</div>
+<pre class="brush: plain">gzip-dcmysql-3.22.30.tar.gz|tarxvf-
+cdmysql-3.22.30
+./configure-prefix=/export/home/guoj/mysql
+make
+makeinstall
+scripts/mysql_install_db
+cd../mysql/bin
+bin/safe_mysqld&amp;安装phpapache
+gzip-dcapache_1.3.11.tar.gz|tarxvf-
+gzip-dcphp-3.0.11.tar.gz|tarxvf-
+cdapache_1.3.11
+./configure-prefix=/export/home/guoj/www
+cd../php-3.0.11
+./configure-with-apache=/export/home/guoj/apache_1.3.11
+-with-mysql=/export/home/guoj/mysql-enable-track-vars
+make
+makeinstall
+cd../apache_1.3.11
+./configure--prefix=/export/home/guoj/www
+--activate-module=src/modules/php3/libphp3.aP
+make
+makeinstall
+cd../php-3.0.11
+cd../php3.ini-distphp3.ini
+viphp3.ini修改php3.ini
+doc_root=/export/home/guoj/www/htdocs/
+extension_dir=/export/home/guoj/php-3.0.11/
+extension=php3_mysql.dllcpphp3.ini/usr/local/lib/php3.inivi../www/conf/httpd.conf
+</pre><div class="para" label-module="para">加上以下几句：</div>
+<pre class="brush: plain">&lt;Directory&quot;/export/home/guoj/php-3.0.11/&quot;&gt;
+OptionsFollowSymLinks
+AllowOverrideNone
+&lt;/Directory&gt;../www/bin/apachectlstart
+</pre><div class="anchor-list">
+<a name="13" class="lemma-anchor para-title" ></a>
+<a name="sub5828265_13" class="lemma-anchor " ></a>
+<a name="其他方面" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">PHP</span>其他方面</h2>
+</div>
+<div class="para" label-module="para">PHP 在数据库方面的丰富支持，也是它迅速走红的原因之一，它支持下列的数据库或是数据文件：</div>
+<div class="para" label-module="para">Adabas 、D、 DBA、dBase 、dbm 、filePro 、Informix 、InterBase、mSQL 、Microsoft SQL Server、·MySQL、Solid、Sybase、 Oracle 、<a target=_blank href="/item/PostgreSQL">PostgreSQL</a></div>
+<div class="para" label-module="para">而在 Internet 上它也支持了相当多的通讯协议 (protocol），包括了与<a target=_blank href="/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6">电子邮件</a>相关的 IMAP,POP3；网管系统 SNMP；<a target=_blank href="/item/%E7%BD%91%E7%BB%9C%E6%96%B0%E9%97%BB">网络新闻</a>NNTP；帐号共用 NIS；全球信息网 HTTP 及 Apache 服务器；目录协议 LDAP 以及其它网络的<a target=_blank href="/item/%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0">相关函数</a>。</div>
+<div class="para" label-module="para">除此之外，用 PHP 写出来的 Web 后端 CGI 程序，可以很轻易的移植到不同的操作系统上。例如，先以 Linux 架的网站，在系统负荷过高时，可以快速地将整个系统移到 SUN 工作站上，不用重新编译 CGI 程序。面对快速发展的 Internet，这是长期规划的最好选择。</div>
+<div class="para" label-module="para"><b>相关语法及概念</b></div>
+<div class="para" label-module="para">php 支持八种原始类型。</div>
+<div class="para" label-module="para">四种标量类型：boolean（布尔型） integer（整型） float（浮点型，也作“double”） string（字符串）</div>
+<div class="para" label-module="para">两种复合类型：array（数组）object（对象）</div>
+<div class="para" label-module="para">最后是两种特殊类型：resource（资源）NULL</div>
+<div class="para" label-module="para">为了确保代码的易读性，本手册还介绍了一些伪类型：mixed、number、callback</div>
+<div class="para" label-module="para">语法（例子中均忽略了PHP代码边界符 &lt;?php ?&gt;）：</div>
+<div class="para" label-module="para">注释的<a target=_blank href="/item/%E8%AF%AD%E6%B3%95">语法</a>有三种：</div>
+<pre class="brush: php">//comment这个是单行注释
+/*comment*/这个是多行注释
+#comment这个是脚本类型注释，很少用
+</pre><div class="para" label-module="para">基本的结构控制语句:</div>
+<pre class="brush: php">//分支结构（选择结构）
+
+if(condition){
+
+//Statement
+
+}
+
+if(condition){
+
+//Statement
+
+}else{
+
+//Statement
+
+}
+
+if(condition){
+
+//Statement
+
+}elseif(condition){
+
+//Statement
+
+}
+//多分支结构
+switch($变量){
+case&#39;值&#39;:
+//Statement
+break;
+case&#39;值2&#39;:
+//Statement
+break;
+default:
+//Statement
+}
+
+//循环结构
+
+while(condition){
+//Statement
+}
+
+
+do{
+//Statement
+}while(condition);
+
+
+for(初始化;判断;变化){
+//Statement
+}
+
+
+//数组遍历专用循环语句
+
+foreach($Arrayas$value){
+echo$value;
+}
+
+foreach($Arrayas$key=&gt;$value){
+echo$key;
+echo$value;
+}</pre><div class="para" label-module="para">一个PHP实例：</div>
+<pre class="brush: php">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Firstprogram&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+//php中string类型的拼接符和其它大多数采用&quot;+&quot;号运算符不一样，而是采用&quot;.&quot;号运算
+//在一般语言中用于对象属性和方法调用的&quot;.&quot;运算符，则和C语言的结构体一样用&quot;=&gt;&quot;
+&lt;?php
+echo&quot;helloworld&quot;.&quot;!&quot;;
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre><div class="para" label-module="para">php对面向对象的支持</div>
+<div class="para" label-module="para"><a target=_blank href="/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B">面向对象编程</a>的概念：</div>
+<div class="para" label-module="para">不同的作者之间说法可能不一样，但是一个<a target=_blank href="/item/OOP">OOP</a>语言必须有以下几方面：</div>
+<div class="para" label-module="para">1.<a target=_blank href="/item/%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">抽象数据类型</a>和信息封装</div>
+<div class="para" label-module="para">2.<a target=_blank href="/item/%E7%BB%A7%E6%89%BF">继承</a></div>
+<div class="para" label-module="para">3.<a target=_blank href="/item/%E5%A4%9A%E6%80%81">多态</a></div>
+<div class="para" label-module="para">在PHP中是通过类来完成封装的：</div>
+<pre class="brush: php">//在OOP类中，通常采用大双驼峰命名法，每个单词的首字母都大写
+classSomething{
+//作用域修饰符：public公共的；private私有的；protected受保护的；
+//属性的名称一般用全小写
+private$x=null;//在编程建议中，内部使用的属性应该给私有修饰符，然后通过方法取值赋值
+
+//方法的名称一般用小驼峰命名法，第一个单词全小写，剩下的单词首字母大写
+//因为PHP不会自动为变量使用$this所以必须主动加上$this伪变量来指向操作的对象
+publicfunctionsetX($v){
+$this-&gt;x=$v;
+}
+publicfunctiongetX(){
+return$this-&gt;x;
+}
+}
+</pre><div class="para" label-module="para">当然你可以按自己的喜好进行定义，但最好保持一种标准，这样会更有效。数据成员在类中使用&quot;var&quot;声明来定义，在给数据成员赋值之前，它们是没有类型的。一个数据成员可以是一个整数，一个数组，一个相关数组（associative array）或者是一个对象。方法在类中被定义成函数形式，在方法中访问类<a target=_blank href="/item/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F">成员变量</a>时，你应该使用$this-&gt;name，否则对一个方法来说，它只能是<a target=_blank href="/item/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F">局部变量</a>。</div>
+<div class="para" label-module="para">使用new操作符来创建一个对象：</div>
+<pre class="brush: php">$obj=newSomething;
+</pre><div class="para" label-module="para">然后你可以使用成员函数通过：</div>
+<pre class="brush: php">$obj-&gt;setX(5)；
+$see=$obj-&gt;getX();
+echo$see;</pre><div class="para" label-module="para">在这个例子中，setX成员函数将5赋值给对象的成员变量x（不是类的），然后getX返回它的值5。可以象：$obj-&gt;x=6那样通过类引用方式来存取数据成员，这不是一个很好的OOP习惯。我强烈建议通过方法来存取成员变量。如果你把成员变量看成是不可处理的，并且只通过对象句柄来使用方法，你将是一个好的OOP程序员。不幸的是，PHP不支持声明私有成员变量，所以不良代码在PHP中也是允许的。继承在PHP中很容易实现，只要使用extends关键字。</div>
+<pre class="brush: php">classAnotherextendsSomething{
+private$y;
+
+publicfunctionsetY($v){
+$this-&gt;y=$v;
+}
+functiongetY(){
+return$this-&gt;y;
+}
+}
+</pre><div class="para" label-module="para">&quot;Another&quot;类的对象拥有了父类（Something）的全部的<a target=_blank href="/item/%E6%95%B0%E6%8D%AE/33305" data-lemmaid="33305">数据</a>成员及方法，而且还加上了自己的数据成员和方法。</div>
+<div class="para" label-module="para">你可以使用</div>
+<pre class="brush: php">$obj2=newAnother;
+$obj2-&gt;setY(5);
+echo$obj2-&gt;getY();
+</pre><div class="para" label-module="para">PHP只支持单<a target=_blank href="/item/%E7%BB%A7%E6%89%BF">继承</a>，所以你不能从两个或两个以上类派生出新的类来。你可以在派生类中重定义一个方法，如果我们在&quot;Another&quot;类中重定义了getX方法（方法重写），我们就不能使 用&quot;Something&quot;中的getX方法了。如果你在派生类中声明了一个与基派同名的数据成员，那么当你处理它时， 它将“隐藏”基类的数据成员。</div>
+<div class="para" label-module="para">你可以在你的类中定义构造<a target=_blank href="/item/%E5%87%BD%E6%95%B0">函数</a>。构造<a target=_blank href="/item/%E5%87%BD%E6%95%B0">函数</a>是一个与类名同名的方法，当你创建一个类的对象时会被调用，例如：</div>
+<pre class="brush: php">classSomething{
+private$x=null;
+
+//新版本的构造函数放弃使用类名，而统一使用__construct()
+publicfunction__construct($x){
+$this-&gt;x=$x;
+}
+publicfunctionsetX($v){
+$this-&gt;x=$v;
+}
+publicfunctiongetX(){
+return$this-&gt;x;
+}
+
+//析构函数
+publicfunction__destruct(){
+
+}
+}
+</pre><div class="para" label-module="para">所以你可以创建一个对象，通过：</div>
+<pre class="brush: php">$obj=newSomething(6)；
+</pre><div class="para" label-module="para">构造函数会自动地把6赋值给数据变量x。构造函数和方法都是普通的<a target=_blank href="/item/PHP%E5%87%BD%E6%95%B0">PHP函数</a>(”__“两个下划线，魔术方法)，所以你可以使用<a target=_blank href="/item/%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0">缺省参数</a>。</div>
+<pre class="brush: php">publicfunction__construct($x=&quot;3&quot;,$y=&quot;5&quot;){
+}
+</pre><div class="para" label-module="para">接着：</div>
+<pre class="brush: php">$obj=newSomething();//x=3andy=5
+$obj=newSomething(8);//x=8andy=5
+$obj=newSomething(8,9);//x=8andy=9
+</pre><div class="para" label-module="para">缺省参数使用C++的方式，所以你不能忽略Y的值，而给X一个缺省参数，参数是从左到右赋值的，如果传入的参数少于要求的参数时，其作的将使用缺省参数。</div>
+<div class="para" label-module="para">当一个派生类的对象被创建时，只有它的构造函数被调用，父类的构造函数没被调用，如果你想调用基类的构造函数，你必须要在派生类的构造函数中用parent::__construct()调用。可以这样做是在派生类中所有父类的方法都是可用的。</div>
+<pre class="brush: php">classAnotherextendsSomething{
+
+publicfunction__construct(){
+parent::__construct(5,6);//显示调用基类构造函数
+}
+}
+
+</pre><div class="para" label-module="para">OOP的一个很好的机制是使用抽象类。抽象类是不能实例化，只能提供给派生类一个接口。设计者通常使用抽象类来强迫程序员从基类派生，这样可以确保新的类包含一些期待的功能。在PHP中没有标准的方法，但是：如果你需要这个特性，可以通过定义基类，并在它的构造函数后加上&quot;die&quot; 的调用，这样就可以保证基类是不可实例化的，在每一个方法（接口）后面加上&quot;die&quot; 语句，所以，如果一个程序员在派生类中没有覆盖方法，将引发一个错误。而且因为PHP 是无类型的，你可能需要确认一个对象是来自于你的基类的派生类，那么在基类中增加一个方法来实义类的身份（返回某种标识id），并且在你接收到一个对象参数时校验这个值。当然，如果一个不好的邪恶程序员在派生类中覆盖了这个方法，这种方法就不起作用了，不过一般问题多在<a target=_blank href="/item/%E6%87%92%E6%83%B0">懒惰</a>的程序员身上，而不是邪恶的程序员。</div>
+<div class="para" label-module="para">当然，能够让基类对程序员无法看到是很好的，只要将接口打印出来做他们的工作就可以了。PHP 5 引入了析构函数的概念，这类似于其它面向对象的语言，如 C++。析构函数会在到某个对象的所有引用都被删除或者当对象被显式销毁时执行。<sup class="sup--normal" data-sup="3">
+[3]</sup><a class="sup-anchor" name="ref_[3]_5828265">&nbsp;</a>
+</div>
+<div class="para" label-module="para"><a target=_blank href="/item/%E9%87%8D%E8%BD%BD">重载</a>（与覆盖不同）在PHP中<b>不支持，因为PHP是弱类型语言</b>。在OOP中，你可以重载一个方法来实现两个或重多的方法具有相同的名字，但是有不同数量或类型的参数（这要看语言）。PHP 是一种松散类型的语言，所以通过类型重载不起作用，然而通过参数的个数不同来重载也不起作用。</div>
+<div class="para" label-module="para">有时在OOP中重载构造函数非常好，这样你可以通过不同的方法创建对象（变量函数）。在PHP中实现它的技巧是：</div>
+<pre class="brush: php">classMyclass{
+publicfunctionMyclass(){
+$name=&quot;Myclass&quot;.func_num_args();//这个函数返回的是传过来参数的个数
+$this-&gt;$name();//这里使用的是一个变量函数，以这个变量的值作为函数的名称调用
+}
+publicfunctionMyclass1($x){
+//code
+}
+publicfunctionMyclass2($x,$y){
+//code
+}
+}
+</pre><div class="para" label-module="para">通过在类中的额外的处理，使用这个类对用户是透明的：</div>
+<pre class="brush: php">$obj1=newMyclass(&#39;1&#39;);//将调用Myclass1
+$obj2=newMyclass(&#39;1&#39;,&#39;2&#39;);//将调用Myclass2
+</pre><div class="para" label-module="para">有时这个非常好用。</div>
+<div class="para" label-module="para">多态</div>
+<div class="para" label-module="para">多态是对象的一种能力，它可以在运行时刻根据传递的对象参数，决定调用哪一个对象的方法。例如，如果你有一个figure的类，它定义了一个draw的方法。并且派生了circle和rectangle 类，在派生类中你覆盖了draw方法，你可能还有一个函数，它希望使用一个参数x，并且可以调用$x-&gt;draw（）。如果你有多态性，调用哪个draw方法就依赖于你传递给这个函数的对象类型。</div>
+<div class="para" label-module="para">多态性在象PHP这样的解释语言（想象一下一个C++编译器生成这样的代码，你应该调用哪一个方法？你也不知道你拥有的对象是什么类型的，好，这不是重点）是非常容易和自然的。所以PHP当然支持多态性。</div>
+<pre class="brush: php">classCalc{
+functionniceDrawing($x){//假设这是Board类的一个方法
+$x-&gt;draw();
+}
+}
+
+classCircle{
+publicfunctiondraw(){
+echo&quot;画了一个圆&quot;;
+}
+}
+
+classRectangle{
+publicfunctiondraw(){
+echo&quot;画了一个矩形&quot;;
+}
+}
+$board=newCalc;
+$obj=newCircle(3,187);
+$obj2=newRectangle(4,5);
+$board-&gt;niceDrawing($obj);//将调用Circle的draw方法
+$board-&gt;niceDrawing($obj2);//将调用Rectangle的draw方法
+</pre><div class="para" label-module="para">用PHP进行面向对象编程</div>
+<div class="para" label-module="para">一些&quot;纯化论者（purists)&quot;可能会说PHP不是一个真正的面向对象的语言，这是事实。PHP 是一个混合型语言，你可以使用OOP，也可以使用传统的过程化编程。然而，对于大型项目，你可能想/需要在PHP 中使用纯的OOP去声明类，而且在你的项目只用对象和类。</div>
+<div class="para" label-module="para">随着项目越来越大，使用OOP可能会有帮助，OOP代码很容易维护，容易理解和重用。这些就是软件工程的基础。在基于web的项目中应用这些概念就成为将来网站成功的关键。</div>
+<div class="para" label-module="para">高级OOP技术</div>
+<div class="para" label-module="para">在看过基本的OOP概念后，我就可以向你展示更高级的技术：</div>
+<div class="para" label-module="para">序列化（Serializing)</div>
+<div class="para" label-module="para">PHP不支持永久对象，在OOP中永久对象是可以在多个应用的引用中保持状态和功能的对象，这意味着拥有将对象保存到一个文件或数据库中的能力，而且可以在以后装入对象。这就是所谓的序列化机制。PHP 拥有序列化方法，它可以通过对象进行调用，序列化方法可以返回对象的字符串表示。然而，序列化只保存了对象的成员数据而不包括方法。</div>
+<div class="para" label-module="para">在PHP4中，如果你将对象序列化到字符串$s中，然后释放对象，接着反序列化对象到$obj，你可以继续使用对象的方法！我不建议这样去做，因为（a）文档中没有保证这种行为在以后的版本中仍然可以使用。（b) 这个可能导致一种误解，在你把一个序列化后的版本保存到磁盘并退出脚本时。当以后运行这个脚本时，你不能期待着在反序列化一个对象时，对象的方法也会在那里，因为字符串表示根本就不包括方法。</div>
+<div class="para" label-module="para">总而言之，PHP 进行序列化对于保存对象的成员变量非常有用。（你也可以将相关数组和数组序列化到一个文件中）。</div>
+<div class="para" label-module="para">例子 :</div>
+<pre class="brush: php">$obj=newClassfoo();
+$str=serialize($obj);//保存$str到磁盘上
+$obj2=unserialize($str);//几个月以后//从磁盘中装入str
+</pre><div class="para" label-module="para">你恢复了成员数据，但是不包括方法（根据文档所说）。这导致了只能通过类似于使用$obj2-&gt;x来存取成员变量（你没有别的方法！）的唯一办法，所以不要在家里试它。</div>
+<div class="para" label-module="para">有一些办法可以解决这个问题，我把它留着，因为对这篇简洁的文章来说，他们太不好。我会很高兴地欢迎在PHP的后续版本中有全序列化的特性。</div>
+<div class="para" label-module="para">使用类进行数据存储PHP和OOP一件非常好的事情就是，你可以很容易地定义一个类来操作某件事情，并且无论何时你想用的时候都可以调用相应的类。假设你有一个<a target=_blank href="/item/HTML%E8%A1%A8%E5%8D%95">HTML表单</a>，用户可以通过选择产品ID号来选择一个产品。在数据库中有产品的信息，你想把产品显示出来，显示它的价格等等。你拥有不同类型的产品，并且同一个动作可能对不同的产品具有不同的意思。例如，显示一个声音可能意味着播放它，但是对于其它种类的产品可能意味着显示一个存在数据库中的图片。你可以使用OOP或PHP来减少编码并提高质量：</div>
+<div class="para" label-module="para">定义一个产品的类，定义它应该有的方法（例如：显示），然后定义对每一种类型的产品的类，从产品类派后出来（SoundItem类，ViewableItem类，等等），覆盖在产品类中的方法，使它们按你的想法动作。</div>
+<div class="para" label-module="para">根据数据库中每一种产品的类型（type）字段给类命名，一个典型的产品表可能有（id,type,price,description，等等字段）...然后在处理脚本中，你可以从数据库中取出type值，然后实例化一个名为type的对象：</div>
+<pre class="brush: php">$obj=new$type();
+$obj-&gt;action();
+</pre><div class="para" label-module="para">这是PHP的一个非常好的特性，你可以不用考虑对象的类型，调用$obj的显示方法或其它的方法。使用这个技术，你不需要修改脚本去增加一个新类型的对象，只是增加一个处理它的类。</div>
+<div class="para" label-module="para">这个功能很强大，只要定义方法，而不去考虑所有对象的类型，在不同的类中按不同的方法实现它们，然后在主脚本中对任意对象使用它们，没有if...else，也不需要两个程序员，只有高兴。</div>
+<div class="para" label-module="para">你同意编程是容易的，维护是便宜的，可重用是真的吗？</div>
+<div class="para" label-module="para">如果你管理一组程序员，分配工作就是很简单的了，每个人可能负责一个类型的对象和处理它的类。</div>
+<div class="para" label-module="para">可以通过这个技术实现国际化，根据用户所选的语言字段应用相应的类就可以了，等等。</div>
+<div class="para" label-module="para">拷贝和克隆</div>
+<div class="para" label-module="para">当你创建一个$obj的对象时，你可以通过$obj2=$obj来拷贝对象，新的对象是$obj的一个拷贝（不是一个引用），所以它具有$obj在当时的状态。有时候，你不想这样，你只是想生成一个象obj类一样的一个新的对象，可以通过使用new语句来调用类的构造函数。在PHP中也可以通过序列化，和一个基类来实现，但所有的其它类都要从基类派生出来。</div>
+<div class="para" label-module="para">进入危险区域</div>
+<div class="para" label-module="para">当你序列化一个对象，你会得到某种格式的字符串，如果你感兴趣，你可以调究它，其中，字符串中有类的名字（太好了！），你可以把它取出来，象：</div>
+<pre class="brush: php">$herring=serialize($obj);
+$vec=explode(&#39;:&#39;,$herring);//以:为标识符把字符串拆分成一个数组
+$nam=str_replace(&quot;\&quot;,&#39;&#39;,$vec[2]);
+</pre><div class="para" label-module="para">所以假设你创建了一个&quot;Universe&quot;的类，并且强制所有的类都必须从universe扩展，你可以在universe 中定义一个clone的方法，如下：</div>
+<pre class="brush: php">classUniverse{
+
+//在新的PHP版本中克隆（__clone()）是一个魔术方法，不要和这个方法搞混了
+
+functionclone(){
+
+$herring=serialize($this);
+
+$vec=explode(&#39;:&#39;,$herring);
+
+$nam=str_replace(&quot;\&quot;&quot;,&#39;&#39;,$vec[2]);
+
+$ret=new$nam;
+return$ret;
+
+}
+
+}//然后
+
+$obj=newSomething();//从Universe扩展
+
+$other=$obj-&gt;clone();
+</pre><div class="para" label-module="para">你所得到的是一个新的Something类的对象，它同使用new方法，调用构造函数创建出的对象一样。我不知道这个对你是否有用，但是Universe类可以知道派生类的名字是一个好的经验。想象是唯一的限制。</div>
+<div class="para" label-module="para"><b>模板引擎</b></div>
+<ul class="custom_dot para-list list-paddingleft-1"><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Smarty：<a target=_blank href="/item/Smarty">Smarty</a>的特点是将<a target=_blank href="/item/%E6%A8%A1%E6%9D%BF">模板</a>编译成PHP脚本，然后执行这些脚本。很快，非常方便。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Heyes Template Class：一个非常容易使用，但功能强大并且快速的<a target=_blank href="/item/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E">模板引擎</a>，它帮助你把页面布局和设计从代码中分离。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">FastTemplate：一个简单的变量插值<a target=_blank href="/item/%E6%A8%A1%E6%9D%BF%E7%B1%BB">模板类</a>，它分析你的模板，把变量的值从HTML代码中分离处理。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">ShellPage：一个简单易用的类，可以让你的整个网站布局基于模板文件，修改模板就能改变整个站点。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">STP Simple Template Parser：一个简单、轻量级并且易于使用的模板分析类。它可以从多个模板中组装一个页面，把结果页面输出到<a target=_blank href="/item/%E6%B5%8F%E8%A7%88%E5%99%A8">浏览器</a>或者文件系统。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">OO Template Class：一个你可以用在自己程序中的面向对象的模板类。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">SimpleTemplate：一个可以创建和结构化网站的模板引擎。它可以解析和编译模板。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">bTemplate：短小但是快速的模板类，允许你把PHP逻辑代码从HTML修饰代码中分离。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Savant：一个强大且轻量级的PEAR兼容模板系统。它是非编译型的，使用PHP语言本身做为它的模板语言。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">ETS - easy template system：可以使用完全相同数据重组模板的模板系统。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">EasyTemplatePHP：适用于你的站点的一个简单但是强大的模板系统。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">vlibTemplate：一个快速、全能的模板系统，它包含一个缓存和调试类。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">AvanTemplate：多字节安全的模板引擎，占用很少系统资源。它支持变量替换，内容块可以设置显示或隐藏</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Grafx Software’s Fast Template：一个修改版本的Fast Template系统，它包括缓存功能，调试控制台以及沉默去除为赋值块。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">TemplatePower：一个快速、简单、功能强大的模板类。主要功能有嵌套的动态块支持，块/文件包含支持以及显示/隐藏未赋值的变量。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">TagTemplate：这个库的功能被设计来使用模板文件，同时允许你从HTML文件检索信息。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">htmltmpl: templating engine：一个适用于Python和PHP的模板引擎。它面向希望在项目中分离代码和设计的web应用开发人员。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">PHP Class for Parsing Dreamweaver templates：一个分析<a target=_blank href="/item/Dreamweaver%E6%A8%A1%E6%9D%BF">Dreamweaver模板</a>的简单类，被用于Gallery 2 和WordPress的自定义模块中。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">MiniTemplator (Template Engine)：针对HTML文件的一个紧凑型模板引擎。对于模板变量和块定义它具有简单的语法。其中块可以嵌套。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Layout Solution：简化<a target=_blank href="/item/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91">网站开发</a>和维护。它拥有常用的变量和页面元素使你不需要重复做页面布局工作。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Cached Fast Template：它已经纳入 FastTemplate ，允许你缓存模板文件，甚至可以在分离的块内容上缓存不同的规格。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">TinyButStrong：一个支持MySQL,Odbc,Sql-Server和ADODB的模板引擎。它包含7个方法和两个属性。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Brian Lozier’s php based template engine：只有2K大小，非常快并且是<a target=_blank href="/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1">面向对象设计</a>。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">WACT：一个从设计中分离代码的<a target=_blank href="/item/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E">模板引擎</a>。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">PHPTAL：一个PHP下面的XML/XHTML模板库。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">Rong_View_Wudimei：Wudimei开发的国产框架Rong Framework的模板引擎，它类似于smarty，优点是速度快，缺点是模板标签较少，不过够用了。</div>
+</li></ul><div class="para" label-module="para"><b>框架介绍thinkphp</b></div>
+<div class="para" label-module="para"><a target=_blank href="/item/ThinkPHP">ThinkPHP</a>是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架 ，创立于2006年初，遵循Apache2开源协议发布，是为了敏捷WEB应用开发和简化企业应用开发而诞生的。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重易用性。并且拥有众多的原创功能和特性，在社区团队的积极参与下，在易用性、扩展性和性能方面不断优化和改进，已经成长为国内最领先和最具影响力的WEB应用开发框架，众多的典型案例确保可以稳定用于商业以及门户级的开发。</div>
+<div class="para" label-module="para">PHP认证级别</div>
+<div class="para" label-module="para">PHP课程由初级（IFE）、中级（IPE）和高级（IAE）三个部分。</div>
+<ul class="custom_dot para-list list-paddingleft-1"><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">IFE即Index Front-end Engineer的缩写，指数前端工程师的意思。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">IPE即 Index PHP Engineer 的缩写，意思是指数PHP工程师。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">IAE即 Index architecture/advanced engineer 的缩写，意思是：指数高级/架构工程师。</div>
+</li></ul><div class="para" label-module="para">PHP安全</div>
+<div class="para" label-module="para">PHP其实不过是Web服务器的一个模块功能，所以首先要保证Web服务器的安全。当然Web服务器要安全又必须是先保证系统安全，这样就扯远了，无穷无尽。常见的web安全漏洞有：注入攻击，跨站攻击，服务器自身漏洞等，对应的详细解释，详见：扩展阅读中的《WEB安全性-2010_OWASP_TOP10》，这里有很详尽的解释。</div>
+<div class="para" label-module="para">PHP的优点学习过程和方法</div>
+<div class="para" label-module="para">PHP的语法类似于C，Perl，ASP或者JSP。对于那些对上述之一的语言较熟悉的人来说，PHP太简单了。相反的，如果你对PHP了解较多，那么你对于其他几种语言的学习都很简单了。你只需要很短的时间内将PHP的核心语言特点全部掌握，你可能已经非常了解HTML，甚至你已经知道怎样用编辑设计软件或者手工来制作好看的WEB站点。由于PHP代码能够无障碍的添加进你的站点，在你设计和维护站点的同时，你可以很轻松的加入PHP使得你的站点更加具有动态特性。</div>
+<div class="para" label-module="para">数据库连接</div>
+<div class="para" label-module="para">PHP可以编译成具有与许多数据库相连接的函数。PHP与MySQL是绝佳的组合，如果再加上Apache服务器，就是相当完美的了。你还可以自己编写外围的函数取间接存取数据库。通过这样的途径当你更换使用的数据库时，可以轻松的更改编码以适应这样的变化。PHPLIB就是最常用的可以提供一般事务需要的一系列基库。</div>
+<div class="para" label-module="para">可扩展性</div>
+<div class="para" label-module="para">就像前面说的那样，PHP<a target=_blank href="/item/%E5%B7%B2%E7%BB%8F">已经</a>进入了一个高速发展的时期。对于一个非程序员来说为PHP扩展附加功能可能会比较难，但是对于一个PHP程序员来说并不困难。</div>
+<div class="para" label-module="para">PHP可伸缩性</div>
+<div class="para" label-module="para">传统上网页的交互作用是通过CGI来实现的。CGI程序的伸缩性不很理想，因为它为每一个正在运行的CGI程序开一个独立进程。解决方法就是将经常用来编写CGI程序的语<div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/PHP/9337/0/e1fe9925bc315c60f3e68a228db1cb1348547788?fr=lemma&ct=single" target="_blank"
+		title="记事本保存php文件注意事项" style="width:220px;height:198px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=cb9945de97dda144de096bb082b6d009/e1fe9925bc315c60f3e68a228db1cb1348547788.jpg"  alt="记事本保存php文件注意事项" style="width:220px;height:198px;"/>
+</a>
+<span class="description">
+记事本保存php文件注意事项
+</span>
+</div>言的解释器编译进你的web服务器（比如mod_perl,JSP）。PHP就可以以这种方式安装，虽然很少有人愿意这样以CGI方式安装它。内嵌的PHP可以具有更高的可伸缩性。</div>
+<div class="para" label-module="para">PHP免费安装</div>
+<div class="para" label-module="para">PHP源代码包安装版：这个版本适合已经有自己独立的网站域名、网站空间的专业网站建设用户。使用方法依然其为简单，只需三步：</div>
+<div class="para" label-module="para">第一、到官方网站：下载 PHP源代码包安装版最新版本，解压下载文件，将其中的全部内容上传到你的支持PHP的网站空间</div>
+<div class="para" label-module="para">第二、改更文件属性，请将根目录下以PHP为后缀名的文件和”/include/domain.php”和 “/attachments” 和 “/data”文件夹以及文件夹下所有的文件属性改成“可读”、“可写”、“可执行”，通常是“755”。</div>
+<div class="para" label-module="para">第三、打开你的网站根目录，系统会自动运行setup安装程序，按提示点下一步操作即可。</div>
+<div class="para" label-module="para">友情提示：当你下载我们的软件并看到这份说明时，则说明你一定是对企业网站建设有一定的需求或者你是一个网站建设技术学习者。</div>
+<div class="para" label-module="para">文件格式</div>
+<ol class="custom_num para-list list-paddingleft-1"><li class="list-num-1-1 list-num-paddingleft-1"><div class="para" label-module="para">对于只含有 php 代码的文件，我们将在文件结尾处忽略掉 &quot;?&gt;&quot;。这是为了防止多余的空格或者其它字符影响到代码。</div>
+</li></ol><div class="para" label-module="para">例如：</div>
+<div class="para" label-module="para">$foo = &#39;foo&#39;;</div>
+<ol class="custom_num para-list list-paddingleft-1"><li class="list-num-1-1 list-num-paddingleft-1"><div class="para" label-module="para">缩进应该能够反映出代码的逻辑结果，尽量使用四个空格，禁止使用制表符TAB，因为这样能够保证有跨客户端编程器软件的灵活性。</div>
+</li></ol><div class="para" label-module="para">例如：</div>
+<pre class="brush: php">if(1==$x){
+$indented_code=1;
+if(1==$new_line){
+$more_indented_code=1;
+}
+}
+</pre><ol class="custom_num para-list list-paddingleft-1"><li class="list-num-1-1 list-num-paddingleft-1"><div class="para" label-module="para">变量赋值建议保持相等间距和排列。</div>
+</li></ol><div class="para" label-module="para">例如：</div>
+<pre class="brush: php">$variable=&#39;demo&#39;;
+$var=&#39;demo2&#39;;
+</pre><ol class="custom_num para-list list-paddingleft-1"><li class="list-num-1-1 list-num-paddingleft-1"><div class="para" label-module="para">每行代码长度应控制在80个字符以内，最长不超过120个字符。因为 linux 读入文件一般以80列为单位，就是说如果一行代码超过80个字符，那么系统将为此付出额外操作指令。这个虽然看起来是小问题，但是对于追求完美的程序员来说也是值得注意并遵守的规范。</div>
+</li><li class="list-num-1-2 list-num-paddingleft-1"><div class="para" label-module="para">每行结尾不允许有多余的空格。</div>
+</li></ol><div class="para" label-module="para">Php文件记事本编辑乱码问题</div>
+<div class="para" label-module="para">一般情况下，记事本编辑器在对文件进行完编辑并保存之时，其默认编码为ANSI，中文。然则更多的时候，php在语言环境设置时语言多数为utf-8，直接保存并用于apache等http-server解析后就会出现乱码。</div>
+<div class="para" label-module="para">为此，应该注意在用记事本编辑完后可将文件用“另存为”的方式对文件进行保存，并将“文件类型”选择“所有文件”，编码与文件指定语言编码一致即可。<sup class="sup--normal" data-sup="4">
+[4]</sup><a class="sup-anchor" name="ref_[4]_5828265">&nbsp;</a>
+</div>
+<div class="para" label-module="para">算数运算符</div>
+<div class="para" label-module="para">PHP 的运算符包括算术运算符、赋值运算符、比较运算符和逻辑运算符。<sup class="sup--normal" data-sup="5">
+[5]</sup><a class="sup-anchor" name="ref_[5]_5828265">&nbsp;</a>
+</div>
+<div class="para" label-module="para">算数运算符：</div>
+<div class="para" label-module="para">加，减，乘，除，取模(取余)<br/>　　+、-、*、/、%</div>
+<div class="para" label-module="para">赋值运算符：（以下解释在许多书中有所不同）</div>
+<div class="para" label-module="para">赋值，加赋值，减赋值、乘赋值、除赋值，连字赋值</div>
+<div class="para" label-module="para">=、+=、-=、*=、/=、.=</div>
+<div class="para" label-module="para">位运算符：</div>
+<div class="para" label-module="para">位与、位或、位亦或、位非、左移、右移</div>
+<div class="para" label-module="para">&amp;、|、^、~、&lt;&lt;、&gt;&gt;</div>
+<div class="para" label-module="para">比较运算符：</div>
+<div class="para" label-module="para">等于、全等于、不等于、不全等于、大于、小于、大于等于、小于等于</div>
+<div class="para" label-module="para">==、===、!=（&lt;&gt;）、!==、&gt;、&lt;、&gt;=、&lt;=</div>
+<div class="para" label-module="para">逻辑运算符：</div>
+<div class="para" label-module="para">逻辑与、逻辑或、逻辑非、逻辑亦或</div>
+<div class="para" label-module="para">&amp;&amp;、||、!、xor</div>
+<div class="para" label-module="para">字符串运算符：</div>
+<div class="para" label-module="para">. 连接两个字符串</div>
+<div class="anchor-list">
+<a name="a" class="lemma-anchor a" ></a>
+</div><div class="album-list">
+<div class="header">
+<span class="title">词条图册</span>
+<a class="more-link" href="/pic/PHP/9337?fr=lemma" target="_blank" nslog-type="10000204">更多图册<em></em></a>
+</div>
+<div class="scroller">
+<div class="list">
+</div>
+</div>
+<div class="footer">
+</div>
+</div>
+<div class="rs-container-foot">
+<a name="rs-1"></a>
+<a name="rs_5828265_5829" class="anchor-2"></a>
+<div id="rs-container-5828265-5829" class="rslazy rs-container" lazy-init="lemmars.tableAction(baidu.g('rs-5828265-5829'))"></div>
+<a name="rs_5828265_33355" class="anchor-2"></a>
+<div id="rs-container-5828265-33355" class="rslazy rs-container" lazy-init="lemmars.tableAction(baidu.g('rs-5828265-33355'))"></div>
+</div><script type="text/javascript">
+        window.rsInsertData = window['rsInsertData'] || [];
+        var rsdataList = {"foot":[{"fentryTableId":5829,"fentryTableName":"WEB\u6280\u672f","fentryTableType":0,"entryId":2320465,"templateId":789,"entryTitle":"\u7f51\u9875\u7f16\u7a0b","isManual":0,"isExpand":1},{"fentryTableId":33355,"fentryTableName":"\u7f51\u9875\u6280\u672f\u4e0e\u6807\u51c6","fentryTableType":1,"entryId":2604836,"templateId":0,"entryTitle":"\u7f51\u9875\u6280\u672f\u4e0e\u6807\u51c6","isManual":0,"isExpand":1}],"top":[]};
+
+        if (rsdataList.top || rsdataList.foot) {
+            rsInsertData.push([5828265, rsdataList]);
+        }
+    </script>
+<dl class="lemma-reference collapse nslog-area log-set-param" data-nslog-type="2" log-set-param="ext_reference">
+<dt class="reference-title">参考资料</dt>
+<dd class="reference-list-wrap">
+<ul class="reference-list">
+<li class="reference-item reference-item--type1 " id="reference-[1]-5828265-wrap">
+<span class="index">1.</span>
+<a class="gotop anchor"  name="refIndex_1_5828265" id="refIndex_1_5828265" title="向上跳转" href="#ref_[1]_5828265">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/5b5dJ0cfDlmluz0X-hAobqSVtETsynaHYO2fnPSmTjsuG3jU_GaXVCI3m1XSeRPakCn7wlDFUMEazfv6urRML-s0KLgXbVoJD_g" target="_blank" class="text">PHP 教程<span class="linkout">&nbsp;</span></a>
+<span class="site">．W3Cschool 菜鸟教程</span><span>&#91;引用日期2014-01-21&#93;</span></li><li class="reference-item reference-item--type1 " id="reference-[2]-5828265-wrap">
+<span class="index">2.</span>
+<a class="gotop anchor"  name="refIndex_2_5828265" id="refIndex_2_5828265" title="向上跳转" href="#ref_[2]_5828265">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/6772nu0LyFuhG5HiaeSZ3DLlJEv1P8gyHLkgEoxACy4tqTT5UGCc6F6sEePHiJBVTXADXFsObGIo6bDLyS-GBGtir5mj4JYDpRKLGA" target="_blank" class="text">PHP版本VC6与VC9、Thread Safe与None-Thread Safe等的区别<span class="linkout">&nbsp;</span></a>
+<span class="site">．站长之家</span><span>&#91;引用日期2013-11-21&#93;</span></li><li class="reference-item reference-item--type1 " id="reference-[3]-5828265-wrap">
+<span class="index">3.</span>
+<a class="gotop anchor"  name="refIndex_3_5828265" id="refIndex_3_5828265" title="向上跳转" href="#ref_[3]_5828265">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/90f06EETREY9B8B2oYQZ7wCBLp3hPpzJyoYTGqk6voUCoXqggMNYE-nFzBPbbrPxM8MIKeQjgjHwK0CIN1qD0s6xh2A" target="_blank" class="text">PHP 构造函数和析构函数<span class="linkout">&nbsp;</span></a>
+<span class="site">．PHP100中文网</span><span>&#91;引用日期2013-10-09&#93;</span></li><li class="reference-item reference-item--type1 " id="reference-[4]-5828265-wrap">
+<span class="index">4.</span>
+<a class="gotop anchor"  name="refIndex_4_5828265" id="refIndex_4_5828265" title="向上跳转" href="#ref_[4]_5828265">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/6dfbcyGex0Txv6shZsBfPcoZNhtIeFy6n-AZrKpun_Ep-2DCfATenQo_uzUoWPBRgP8v26KT_YmVj-aJDxKZzzs" target="_blank" class="text">什么是php文件<span class="linkout">&nbsp;</span></a>
+<span class="site">．电脑配置网</span><span>&#91;引用日期2013-09-12&#93;</span></li><li class="reference-item reference-item--type1 " id="reference-[5]-5828265-wrap">
+<span class="index">5.</span>
+<a class="gotop anchor"  name="refIndex_5_5828265" id="refIndex_5_5828265" title="向上跳转" href="#ref_[5]_5828265">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/74f8q1U-rIl8H9u2OvIx8IQ3qciUi2I_mjH1DMCviHD_gxtLPSMbkzn-rjuAEoriKTAri8gtPsLWT2CUKIva1R8T0SxWfjxjt7AJyv12VgEsNNg" target="_blank" class="text">微信公众平台应用开发实战相关技术介绍<span class="linkout">&nbsp;</span></a>
+<span class="site">．天香空城</span></li></ul>
+</dd>
+</dl>
+<div id="open-tag">
+<div class="open-tag-title">词条标签：</div>
+<dd id="open-tag-item">
+<span class="taglist">
+<a target="_blank" href="/wikitag/taglist?tagId=76607">科学百科信息科学分类</a>
+</span>
+，<span class="taglist">
+<a target="_blank" href="/wikitag/taglist?tagId=68031">中国电子学会</a>
+</span>
+，<span class="taglist">
+互联网
+</span>
+</dd>
+<div class="open-tag-collapse" id="open-tag-collapse"></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="side-content">
+<div class="summary-pic">
+<a href="/pic/PHP/9337/0/2f738bd4b31c870168f8cf9f257f9e2f0708ff79?fr=lemma&amp;ct=single" target="_blank" nslog-type="10002401">
+<img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=2caeaf5892ef76c6d0d2fc2da52d9ac7/2f738bd4b31c870168f8cf9f257f9e2f0708ff79.jpg" />
+<button class="picAlbumBtn"><em></em><span>图集</span></button>
+<div>PHP图册</div>
+</a>
+</div>
+<div class="lemmaWgt-promotion-vbaike">
+<div class="promotion_title">V百科<a href="/vbaike#gallary" target="_blank">往期回顾</a></div>
+<div class="promotion_viewport">
+<dl>
+</dl>
+<div class="promotion_viewport_pager"></div>
+</div>
+</div><div class="lemmaWgt-promotion-rightPreciseAd" data-lemmaId="9337" data-lemmaTitle="PHP"></div><div class="lemmaWgt-sideRecommend">
+<a name="zhixinWrap" class="qnAnchor"></a>
+<div class="zhixin-box" id="zhixinWrap" data-source="" data-newLemmaId="9337">
+</div>
+<form id="zhixinErrorForm" class="hidden" action="https://sp2.baidu.com/-uV1bjeh1BF3odCf/index.php/feedback/zx/baikeJC" target="zhixinSubErr" method="post">
+<input class="js-url" name="fb_html_url" type="hidden" />
+<input class="js-query" name="fb_query" type="hidden" />
+<input class="js-title" name="fb_card_title" type="hidden" />
+<input class="js-content" name="fb_content" type="hidden" />
+<input class="js-souceId" name="fb_source_id" type="hidden" />
+</form>
+<iframe id="zhixinSubErr" name="zhixinSubErr" style="display:none" frameborder="0"></iframe>
+</div>
+<div class="lemmaWgt-promotion-slide">
+<div class="promotion_viewport">
+<dl>
+</dl>
+<div class="promotion_viewport_pager"></div>
+</div>
+</div><div class="lemmaWgt-promotion-rightBigAd">
+</div><div id="side-auth">
+<div id="authEdit" class="side-box">
+<dl>
+<dt class="sidetitle">权威合作编辑</dt>
+<dd class="side-auth-content">
+<div class="side-auth-img">
+<a href="http://www.cast.org.cn/" target="_blank" class="nslog:7075" id="authOrgRightEditPic">
+<img style="display: none" onload="this.style.width = '50px';this.style.display='';" src="https://baike.baidu.com/cms/rc/QQ%E5%9B%BE%E7%89%8720141121003618.jpg" alt="权威编辑" title="权威编辑"/>
+</a>
+</div>
+<div class="side-auth-info">
+<p class="auth-info-name">
+<a href="http://www.cast.org.cn/" nslog-type="7075" target="_blank" id="authOrgRightEdit">“科普中国”百科科学词条编写与应用工作项目</a>
+</p>
+<span id="authDetail">
+“科普中国”是为我国科普信息化建设塑造的全...
+</span>
+</div>
+<div class="clear"></div>
+</dd>
+<dd class="authVersion">
+<span style="">
+<a class="whatIs" align="absmiddle" href="javascript:void(0);"></a><a href=" http://baike.bdimg.com/cms/static/cooperation/content.pdf" target="_blank" nslog-type="36" class="link-toggle" id="whatIsAuthEdit">什么是权威编辑</a>
+</span>
+<span class="divisionLine"></span>
+<a href="/history/PHP/73630634" class="nslog:37" target="_blank" id="authEditVersion">查看编辑版本</a>
+</dd>
+</dl>
+</div>
+<div id="authResource" class="side-box">
+<dl>
+<dt class="sidetitle">资源提供</dt>
+<dd class="side-auth-content">
+<div class="side-auth-img">
+<a href="http://www.cie-info.org.cn/" target="_blank" nslog-type="7096">
+<img style="display: none" onload="this.style.width = '50px';this.style.display='';" src="https://bkssl.bdimg.com/cms/static/cie-logo.jpg" alt="资源合作" title="资源合作"/>
+</a>
+</div>
+<div class="side-auth-info">
+<div class="auth-info-name">
+<a href="http://www.cie-info.org.cn/" class="nslog:7096" target="_blank">中国电子学会</a>
+</div>
+<p>中国电子学会（Chinese Instit...</p>
+<p>提供资源类型：<span style="color: #555555;">内容</span></p>
+</div>
+</dd>
+<dd class="authVersion">
+<span>
+<a class="whatIs" align="absmiddle" href="javascript:void(0);"></a>
+<a href=" http://baike.bdimg.com/cms/static/cooperation/content.pdf" target="_blank" nslog-type="3024" class="link-toggle">什么是资源合作</a>
+</span>
+</dd>
+</dl>
+</div>
+</div><dl class="side-box lemma-statistics">
+<dt class="title">词条统计</dt>
+<dd class="description">
+<ul>
+<li>浏览次数：<span id="j-lemmaStatistics-pv"></span>次</li>
+<li>编辑次数：387次<a href="/historylist/PHP/9337" class="nslog:1021" target="_blank">历史版本</a></li>
+<li>最近更新：<span class="j-modified-time" style="display:none">2016-08-01</span></li>
+<li>创建者：<a class="show-userCard" data-uid="8087653" title="查看此用户资料" target="_blank" href="http://www.baidu.com/p/_%E8%BF%AA" nslog-type="1022">_迪</a></li>
+</ul>
+</dd>
+</dl>
+<div class="side-catalog" style="visibility:hidden">
+<div class="side-bar">
+<em class="circle start"></em>
+<em class="circle end"></em>
+</div>
+<div class="catalog-scroller">
+<dl class="catalog-list">
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#1" class="title-link">
+<span class="text">
+<span class="title-index">1</span>
+<span class="title-link" nslog-type="10002802">发展</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#2" class="title-link">
+<span class="text">
+<span class="title-index">2</span>
+<span class="title-link" nslog-type="10002802">开发工具</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#3" class="title-link">
+<span class="text">
+<span class="title-index">3</span>
+<span class="title-link" nslog-type="10002802">特性</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#4" class="title-link">
+<span class="text">
+<span class="title-index">4</span>
+<span class="title-link" nslog-type="10002802">优势</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#4_1" class="title-link">
+<span class="text">
+<span class="title-index">4.1</span>
+<span class="title-link" nslog-type="10002802">开放源代码</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#4_2" class="title-link">
+<span class="text">
+<span class="title-index">4.2</span>
+<span class="title-link" nslog-type="10002802">免费性</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#4_3" class="title-link">
+<span class="text">
+<span class="title-index">4.3</span>
+<span class="title-link" nslog-type="10002802">快捷性</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#4_4" class="title-link">
+<span class="text">
+<span class="title-index">4.4</span>
+<span class="title-link" nslog-type="10002802">跨平台性强</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#4_5" class="title-link">
+<span class="text">
+<span class="title-index">4.5</span>
+<span class="title-link" nslog-type="10002802">效率高</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#4_6" class="title-link">
+<span class="text">
+<span class="title-index">4.6</span>
+<span class="title-link" nslog-type="10002802">图像处理</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#4_7" class="title-link">
+<span class="text">
+<span class="title-index">4.7</span>
+<span class="title-link" nslog-type="10002802">面向对象</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#4_8" class="title-link">
+<span class="text">
+<span class="title-index">4.8</span>
+<span class="title-link" nslog-type="10002802">专业专注</span>
+</span>
+</a>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#5" class="title-link">
+<span class="text">
+<span class="title-index">5</span>
+<span class="title-link" nslog-type="10002802">技术应用</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#6" class="title-link">
+<span class="text">
+<span class="title-index">6</span>
+<span class="title-link" nslog-type="10002802">参考手册</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#7" class="title-link">
+<span class="text">
+<span class="title-index">7</span>
+<span class="title-link" nslog-type="10002802">版本区别</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#7_1" class="title-link">
+<span class="text">
+<span class="title-index">7.1</span>
+<span class="title-link" nslog-type="10002802">选择版本</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#7_2" class="title-link">
+<span class="text">
+<span class="title-index">7.2</span>
+<span class="title-link" nslog-type="10002802">VC6与VC9</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#7_3" class="title-link">
+<span class="text">
+<span class="title-index">7.3</span>
+<span class="title-link" nslog-type="10002802">TS和NTS</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#7_4" class="title-link">
+<span class="text">
+<span class="title-index">7.4</span>
+<span class="title-link" nslog-type="10002802">查看版本</span>
+</span>
+</a>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#8" class="title-link">
+<span class="text">
+<span class="title-index">8</span>
+<span class="title-link" nslog-type="10002802">PHP3</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#9" class="title-link">
+<span class="text">
+<span class="title-index">9</span>
+<span class="title-link" nslog-type="10002802">PHP4</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#9_1" class="title-link">
+<span class="text">
+<span class="title-index">9.1</span>
+<span class="title-link" nslog-type="10002802">简介</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#9_2" class="title-link">
+<span class="text">
+<span class="title-index">9.2</span>
+<span class="title-link" nslog-type="10002802">优越性</span>
+</span>
+</a>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#10" class="title-link">
+<span class="text">
+<span class="title-index">10</span>
+<span class="title-link" nslog-type="10002802">PHP5</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#10_1" class="title-link">
+<span class="text">
+<span class="title-index">10.1</span>
+<span class="title-link" nslog-type="10002802">新对象模式</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#10_2" class="title-link">
+<span class="text">
+<span class="title-index">10.2</span>
+<span class="title-link" nslog-type="10002802">异常处理</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#10_3" class="title-link">
+<span class="text">
+<span class="title-index">10.3</span>
+<span class="title-link" nslog-type="10002802">命名空间</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#10_4" class="title-link">
+<span class="text">
+<span class="title-index">10.4</span>
+<span class="title-link" nslog-type="10002802">加密</span>
+</span>
+</a>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#11" class="title-link">
+<span class="text">
+<span class="title-index">11</span>
+<span class="title-link" nslog-type="10002802">版本6设想</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#12" class="title-link">
+<span class="text">
+<span class="title-index">12</span>
+<span class="title-link" nslog-type="10002802">环境配置</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#12_1" class="title-link">
+<span class="text">
+<span class="title-index">12.1</span>
+<span class="title-link" nslog-type="10002802">Windows下</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#12_2" class="title-link">
+<span class="text">
+<span class="title-index">12.2</span>
+<span class="title-link" nslog-type="10002802">安装过程</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#12_3" class="title-link">
+<span class="text">
+<span class="title-index">12.3</span>
+<span class="title-link" nslog-type="10002802">UNIX下</span>
+</span>
+</a>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#13" class="title-link">
+<span class="text">
+<span class="title-index">13</span>
+<span class="title-link" nslog-type="10002802">其他方面</span>
+</span>
+</a>
+</dt>
+<a class="arrow" href="javascript:void(0);"></a>
+</dl>
+</div>
+<div class="right-wrap">
+<a class="go-up disable" href="javascript:void(0);"></a>
+<a class="go-down" href="javascript:void(0);"></a>
+</div>
+<div class="bottom-wrap">
+<a class="toggle-button" href="javascript:void(0);" nslog-type="10002803"></a>
+<a class="gotop-button" href="javascript:void(0);" nslog-type="10002804"></a>
+</div>
+</div>
+<div id="side_box_fengchao" class="fengchao side-box" nslog="area" nslog-type="10000902">
+</div>
+<div id="side_box_unionAd" class="unionAd side-box">
+<div class="union-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="after-content">
+<div class="fc-guess-like new" id="fc_guess_like_new">
+<span class="logo-du">
+<em class="cmn-icon cmn-icons cmn-icons_logo-du"></em>
+</span>
+<h6>猜你关注</h6>
+<ul class="cmn-clearfix">
+</ul>
+</div>
+<div class="bottom-promotion" id="bottom-promotion">
+<div id="BOTTOM_PRO_AD"></div>
+</div>
+</div>
+</div>
+
+<div class="wgt-footer-main">
+<div class="content">
+<dl class="fresh">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-fresh"></em>新手上路</dt>
+<dd>
+<div><a target="_blank" href="/usercenter/tasks#guide">成长任务</a></div>
+<div><a target="_blank" href="/help#main01">编辑入门</a></div>
+<div><a target="_blank" href="/help#main06">编辑规则</a></div>
+<div><a target="_blank" href="/item/%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91%EF%BC%9A%E6%9C%AC%E4%BA%BA%E8%AF%8D%E6%9D%A1%E7%BC%96%E8%BE%91%E6%9C%8D%E5%8A%A1/22442459?bk_fr=pcFooter">本人编辑</a><img src="https://bkssl.bdimg.com/static/wiki-common/widget/component/footer/img/new-icon_a64774d.png" class="new-icon" alt="new"></div>
+</dd>
+</dl>
+<dl class="question">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-question"></em>我有疑问</dt>
+<dd>
+<div><a id="J-bk-feedback-query" data-lemma="PHP" href="javascript:void(0);" nslog-type="10070001">我要质疑</a></div>
+<div><a target="_blank" href="https://aikefu.baidu.com/?product=bk001" nslog-type="10000003">在线客服</a></div>
+<div><a target="_blank" href="http://tieba.baidu.com/f?ie=utf-8&fr=bks0000&kw=%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91">参加讨论</a></div>
+<div><a id="J-bk-feedback-main" href="javascript:void(0);">意见反馈</a></div>
+</dd>
+</dl>
+<dl class="suggestion">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-suggestion"></em>投诉建议</dt>
+<dd>
+<div><a target="_blank" href="http://help.baidu.com/newadd?prod_id=10&category=1">举报不良信息</a></div>
+<div><a target="_blank" href="http://help.baidu.com/newadd?prod_id=10&category=2">未通过词条申诉</a></div>
+<div><a target="_blank" href="http://help.baidu.com/newadd?prod_id=10&category=6">投诉侵权信息</a></div>
+<div><a target="_blank" href="http://help.baidu.com/newadd?prod_id=10&category=5">封禁查询与解封</a></div>
+</dd>
+</dl>
+</div>
+<div class="copyright">©2018&nbsp;Baidu&nbsp;<a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;|&nbsp;<a href="http://help.baidu.com/question?prod_en=baike&class=89&id=1637" target="_blank">百科协议</a>&nbsp;|&nbsp;<a href="/operation/cooperation" target="_blank">百度百科合作平台</a>&nbsp;|&nbsp;<span>京ICP证030173号&nbsp;</span><img class="copyright-img" width="13" height="16" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/copy_rignt_24.png"></div>
+<p class="recordcode"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001" target="_blank"><i class="icon-police"></i>京公网安备11000002000001号</a></p>
+</div>
+
+
+<div class="lemmaWgt-searchHeader">
+<div class="layout cmn-clearfix">
+<div class="wgt-searchbar wgt-searchbar-new wgt-searchbar-simple cmn-clearfix ">
+<div class="logo-container">
+<a class="logo cmn-inline-block" title="到百科首页" href="/">
+<span class="cmn-baike-logo">
+<em class="cmn-icon cmn-icons cmn-icons_logo-bai"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-du"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-baike"></em>
+</span>
+</a>
+</div>
+<div class="search">
+<div class="form">
+<form id="searchForm" action="/search/word" method="GET" target="_self">
+<input id="query" nslog="normal" nslog-type="10080015" name="word" type="text" autocomplete="off" autocorrect="off" value="PHP" /><button id="search" nslog="normal" nslog-type="10080013" type="button">进入词条</button>
+</form>
+<form id="searchLemmaForm" action="/search" method="GET" target="_self">
+<input id="searchLemmaQuery" name="word" type="hidden" />
+<input name="pn" type="hidden" value="0" />
+<input name="rn" type="hidden" value="0" />
+<input name="enc" type="hidden" value="utf8" />
+</form>
+<ul id="suggestion" class="suggestion">
+<div class="sug"></div>
+<li class="extra">
+<span id="clear" style="margin-right:8px;">清除历史记录</span><span id="close" nslog="normal" nslog-type="10080016">关闭</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="tool-buttons">
+<a class="toolButtons-edit button j-edit-link" href="javascript:;" nslog-type="10010001"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-hollow"></em>编辑</a>
+<a class="toolButtons-collect button" href="javascript:;" nslog-type="10010002"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_star-hollow"></em><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_star-solid"></em>收藏</a>
+<a class="toolButtons-vote button top-vote" href="javascript:;" nslog-type="10010003"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_zan-hollow"></em><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_zan-solid"></em><span class="j-tool-btn-vote-num">赞</span></a>
+</div>
+<div class="user-info">
+<a class="user-link unlogin" href="javascript:;" nslog-type="10010008" target="_blank">登录</a>
+</div>
+</div></div>
+<div class="new-bdsharebuttonbox new-side-share" id="side-share">
+<span class="title">分享</span>
+<div class="side-border">
+<div class="triangle"></div>
+<a class="share-link bds_qzone"  href="javascript:void(0);" nslog-type="10060101">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qzone"></em>
+</a>
+<a class="share-link bds_tsina" href="javascript:void(0);" nslog-type="10060301">
+<em class="cmn-icon cmn-icons cmn-icons_logo-sina-weibo"></em>
+</a>
+<a class="bds_wechat"  href="javascript:void(0);" nslog-type="10060001">
+<em class="cmn-icon cmn-icons cmn-icons_logo-wechat"></em>
+</a>
+<a class="share-link bds_tqq"  href="javascript:void(0);" nslog-type="10060201">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qq"></em>
+</a>
+</div>
+</div>
+<div class="qrcode-wrapper" id="layer" style="display: none">
+<div class="bd_weixin_popup_header">
+<em class="cmn-icon cmn-icons cmn-icons_close"></em>
+<span>分享到微信朋友圈</span>
+</div>
+<div id="wechat-qrcode-img"></div>
+<div class="bd_weixin_popup_footer">打开微信“扫一扫”即可将网页分享至朋友圈</div>
+</div>
+<div></div><div></div>
+
+</body><script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-common/js/mod_4302fe0.js"></script>
+<script type="text/javascript">require.resourceMap({"res":{"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom_717775e.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class_cafca1f.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper_23028b9.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/default-setting.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/default-setting_01d8d6b.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/event-manager.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/event-manager_2727a1b.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/guid.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/guid_6bbbaea.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances_7dddc6d.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/default-setting.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/event-manager.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/guid.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/destroy.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/destroy_6959de6.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll_b7a6463.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry_2c0373a.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/click-rail.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/click-rail_3eff27a.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/drag-scrollbar.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/drag-scrollbar_324e0f2.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/keyboard.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/keyboard_1180272.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/mouse-wheel.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/mouse-wheel_53033c9.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/native-scroll.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/native-scroll_3c4108d.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/selection.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/selection_aaa3a54.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/touch.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/touch_75a2a8d.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/initialize.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/initialize_58cc36f.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/click-rail.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/drag-scrollbar.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/keyboard.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/mouse-wheel.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/native-scroll.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/selection.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/touch.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update_c58a304.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/main.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/main_d8498f6.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/destroy.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/initialize.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/index.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/index_0021e06.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/main.js"]},"wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/lemmaInsert.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaRelation/lemmaInsert_8f518c5.js","pkg":"wiki-lemma:p5","deps":["wiki-common:widget/component/nslog/nslog.js"]},"wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/tangram.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaRelation/tangram_459492a.js","pkg":"wiki-lemma:p5"},"wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip_53efc29.js","deps":["wiki-common:widget/lib/jquery/jquery.js","wiki-common:widget/lib/jsmart/jsmart.js","wiki-common:widget/component/nslog/nslog.js"]}},"pkg":{"wiki-lemma:p5":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/pkg/wiki-lemma-module-lemmaRelation_0aebd7b.js"}}});</script><script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-common/pkg/wiki-common-base_0340632.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/pkg/wiki-lemma_cab423f.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/logMap_2a454f1.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/secondsKnow_7b703e8.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/script/XRegExp_2ce0ee9.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/script/shCore_9783b01.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/script/shBrushPhp_662e0cc.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/script/shBrushPlain_6028423.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/zhixin/zhixin_58e6342.js"></script>
+<script type="text/javascript">!function(){  var $ = require('wiki-common:widget/lib/jquery/jquery'),
+    userbar = require('wiki-common:widget/component/userbar-n/userbar-n');
+    
+  userbar.buildUserbar($('#j-wgt-userbar'), null);
+}();
+!function(){  require('wiki-common:widget/component/headTabBar/headTabBar');
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery'),
+      initSearchbar = require('wiki-common:widget/component/searchbar-n/searchbar');  
+    initSearchbar($('.wgt-searchbar-main'));
+  }();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var cookie = require('wiki-common:widget/util/cookie');
+    if (!cookie.get('baikedeclare')) {
+        $('#J-declare-wrap').css('display', 'block');
+    }
+    $('#J-declare-close').on('click', function () {
+        // 用户关闭后，不再显示，这里暂设过期时间为1年
+        cookie.set('baikedeclare', 'showed', {
+            expires: 365 * 60 * 60 * 24 * 1000,
+            path: '/'
+        });
+        $('#J-declare-wrap').css('display', 'none');
+    });
+}();
+!function(){var $ = require('wiki-common:widget/lib/jquery/jquery');
+
+var timer = '';
+
+$('.wgt-navbar').on('mouseenter', 'dl', function() {
+  clearTimeout(timer);
+  timer = setTimeout(function() {
+    $('.wgt-navbar').addClass('wgt-navbar-hover');
+  }, 300);
+}).on('mouseleave', function() {
+  clearTimeout(timer);
+  $('.wgt-navbar').removeClass('wgt-navbar-hover');
+}).on('click', 'a', function() {
+  clearTimeout(timer);
+  $('.wgt-navbar').removeClass('wgt-navbar-hover');
+});
+}();
+!function(){    require('wiki-lemma:widget/lemma_content/configModule/secondsKnow/secondsKnow')({"secondsKnow":[{"videoSrc":{"type":"baikePlayer","secondKind":"1","secondId":208297,"mid":"mda-heudqx9vsr02bxq7","cover":"https:\/\/gss3.bdstatic.com\/7Po3dSag_xI4khGkpoWK1HF6hhy\/baike\/whfpf%3D685%2C390%2C0\/sign=e00e39339716fdfad83995aed2b2ba6c\/bf096b63f6246b604bd2706ce1f81a4c500fa2ce.jpg","cover_small":"https:\/\/gss3.bdstatic.com\/7Po3dSag_xI4khGkpoWK1HF6hhy\/baike\/whfpf%3D280%2C150%2C0\/sign=7130d806b3389b5038aab312e308d7e5\/bf096b63f6246b604bd2706ce1f81a4c500fa2ce.jpg"},"coverSrc":"bf096b63f6246b604bd2706ce1f81a4c500fa2ce","title":"\u89e3\u5bc6PHP\u7f16\u7a0b\u5f00\u53d1","mediaId":"mda-heudqx9vsr02bxq7","secondId":208297},{"videoSrc":{"type":"baikePlayer","secondKind":"1","secondId":413233,"mid":"mda-iawk25nhb90vhac0","cover":"https:\/\/gss1.bdstatic.com\/-vo3dSag_xI4khGkpoWK1HF6hhy\/baike\/whfpf%3D685%2C390%2C0\/sign=522dbfee743e6709be5516bf5dfaa905\/caef76094b36acafdb76d53577d98d1000e99c61.jpg","cover_small":"https:\/\/gss1.bdstatic.com\/-vo3dSag_xI4khGkpoWK1HF6hhy\/baike\/whfpf%3D280%2C150%2C0\/sign=c651f472ad1ea8d38a772744f1370276\/caef76094b36acafdb76d53577d98d1000e99c61.jpg"},"coverSrc":"caef76094b36acafdb76d53577d98d1000e99c61","title":"\u4e24\u5206\u949f\u770b\u61c2PHP","mediaId":"mda-iawk25nhb90vhac0","secondId":413233}],"pageBg":null,"type":"normal","orgId":75}, 9337, 'PHP');
+}();
+!function(){        require('wiki-lemma:widget/lemma_content/mainContent/polysemantList/polysemantList')('PHP');
+    }();
+!function(){        var $ = require('wiki-common:widget/lib/jquery/jquery');
+        var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+        // 展现策略
+        rightCheck.editView('9337', function(res) {
+            if (!res.errno) {
+                if (res.data.divide) {
+                    $('.top-tool .split-icon').css('display', 'block');
+                }
+            }
+        });
+    }();
+!function(){    var nslog = require('wiki-common:widget/component/nslog/nslog');
+	require.async(["wiki-lemma:widget/basicElement/collect/collect"],function(collect){
+		collect({
+            newLemmaId:"9337",
+			lemmaId:"99",
+			subLemmaId:"5828265"
+		});
+	});
+}();
+!function(){    require.async(["wiki-lemma:widget/basicElement/topShare/topShare"],function(topShare){
+        topShare({
+            newLemmaId: '9337'
+        });
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.lemmaWgt-lemmaTitle .edit-lemma').css('display', 'inline-block');
+                // 编辑和申请本人实名验证保证同一行展示
+                if ($('.lemmaWgt-lemmaTitle .personal').length > 0) {
+                  if ($('.lemmaWgt-lemmaTitle .edit-lemma').offset().left > $('.lemmaWgt-lemmaTitle .personal').offset().left) {
+                    $('.lemmaWgt-lemmaTitle .edit-lemma').before('<br/><br/>');
+                  }
+                }
+            } else {
+                $('.lemmaWgt-lemmaTitle .lock-lemma').show();
+                // 锁定和申请本人实名验证保证同一行展示
+                if ($('.lemmaWgt-lemmaTitle .personal').length > 0) {
+                  if ($('.lemmaWgt-lemmaTitle .lock-lemma').offset().left > $('.lemmaWgt-lemmaTitle .personal').offset().left) {
+                    $('.lemmaWgt-lemmaTitle .lock-lemma').before('<br/><br/>');
+                  }
+                }
+            }
+        } else {
+            if ('') {
+                $('.lemmaWgt-lemmaTitle .edit-lemma').css('display', 'inline-block');
+                // 编辑和申请本人实名验证保证同一行展示
+                if ($('.lemmaWgt-lemmaTitle .personal').length > 0) {
+                  if ($('.lemmaWgt-lemmaTitle .edit-lemma').offset().left > $('.lemmaWgt-lemmaTitle .personal').offset().left) {
+                    $('.lemmaWgt-lemmaTitle .edit-lemma').before('<br/><br/>');
+                  }
+                }
+            } else {
+                $('.lemmaWgt-lemmaTitle .lock-lemma').show();
+                // 锁定和申请本人实名验证保证同一行展示
+                if ($('.lemmaWgt-lemmaTitle .personal').length > 0) {
+                  if ($('.lemmaWgt-lemmaTitle .lock-lemma').offset().left > $('.lemmaWgt-lemmaTitle .personal').offset().left) {
+                    $('.lemmaWgt-lemmaTitle .lock-lemma').before('<br/><br/>');
+                  }
+                }
+            }
+        }
+    });
+}();
+!function(){	require('wiki-lemma:widget/lemma_content/mainContent/basicInfo/basicInfo')();
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var nslog = require('wiki-common:widget/component/nslog/nslog');
+    nslog(10002701);
+    $('.lemmaWgt-lemmaCatalog a').on('click', function () {
+           nslog(10002702);
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('9337', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){        SyntaxHighlighter.all();
+    }();
+!function(){	require.async(["wiki-common:widget/lib/jquery/jquery","wiki-lemma:widget/lemma_content/mainContent/albumList/albumList","wiki-common:widget/component/nslog/nslog"],function($,AlbumList,nslog){
+		var list=new AlbumList({
+			newLemmaId:"9337",
+			lemmaTitle:"PHP",
+			lemmaId:"99",
+			subLemmaId:"5828265",
+			data:[{"coverpic":"2f738bd4b31c870168f8cf9f257f9e2f0708ff79","width":353,"height":373,"desc":"\u8bcd\u6761\u56fe\u7247","total":7,"coverurl":"https:\/\/gss1.bdstatic.com\/9vo3dSag_xI4khGkpoWK1HF6hhy\/baike\/s%3D235\/sign=c6c0476d40a7d933bba8e370984ad194\/2f738bd4b31c870168f8cf9f257f9e2f0708ff79.jpg"}]
+		});
+		!!window.ScriptLazyLoad && window.ScriptLazyLoad.regist({
+			dom:$('.album-list'),
+			loadFunc:function(){
+				list.load();
+				nslog(1258);
+			},
+			distance:500
+		});
+	});
+}();
+!function(){        require.async(['wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/lemmaInsert'], function(init) {
+            init({ // 关系化统计需求--传参  shangwenbin
+                lemmaId: "99",
+                newLemmaId: "9337",
+                subLemmaId: "5828265",
+                lemmaTitle: "PHP"
+            });
+        });
+    }();
+!function(){		require.async(["wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReference","wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip"],function(Reference,ReferenceTip){
+			new Reference({
+				subLemmaId:"5828265"
+			});
+			new ReferenceTip({
+				subLemmaId:"9337",
+				lemmaTitle:"PHP",
+				reference:[{"index":1,"type":"1","title":"PHP \u6559\u7a0b","url":"\/redirect\/5b5dJ0cfDlmluz0X-hAobqSVtETsynaHYO2fnPSmTjsuG3jU_GaXVCI3m1XSeRPakCn7wlDFUMEazfv6urRML-s0KLgXbVoJD_g","site":"W3Cschool \u83dc\u9e1f\u6559\u7a0b","publishDate":"","refDate":"2014-01-21"},{"index":2,"type":"1","title":"PHP\u7248\u672cVC6\u4e0eVC9\u3001Thread Safe\u4e0eNone-Thread Safe\u7b49\u7684\u533a\u522b","url":"\/redirect\/6772nu0LyFuhG5HiaeSZ3DLlJEv1P8gyHLkgEoxACy4tqTT5UGCc6F6sEePHiJBVTXADXFsObGIo6bDLyS-GBGtir5mj4JYDpRKLGA","site":"\u7ad9\u957f\u4e4b\u5bb6","publishDate":"","refDate":"2013-11-21"},{"index":3,"type":"1","title":"PHP \u6784\u9020\u51fd\u6570\u548c\u6790\u6784\u51fd\u6570","url":"\/redirect\/90f06EETREY9B8B2oYQZ7wCBLp3hPpzJyoYTGqk6voUCoXqggMNYE-nFzBPbbrPxM8MIKeQjgjHwK0CIN1qD0s6xh2A","site":"PHP100\u4e2d\u6587\u7f51","publishDate":"","refDate":"2013-10-09"},{"index":4,"type":"1","title":"\u4ec0\u4e48\u662fphp\u6587\u4ef6","url":"\/redirect\/6dfbcyGex0Txv6shZsBfPcoZNhtIeFy6n-AZrKpun_Ep-2DCfATenQo_uzUoWPBRgP8v26KT_YmVj-aJDxKZzzs","site":"\u7535\u8111\u914d\u7f6e\u7f51","publishDate":"","refDate":"2013-09-12"},{"index":5,"type":"1","title":"\u5fae\u4fe1\u516c\u4f17\u5e73\u53f0\u5e94\u7528\u5f00\u53d1\u5b9e\u6218\u76f8\u5173\u6280\u672f\u4ecb\u7ecd","url":"\/redirect\/74f8q1U-rIl8H9u2OvIx8IQ3qciUi2I_mjH1DMCviHD_gxtLPSMbkzn-rjuAEoriKTAri8gtPsLWT2CUKIva1R8T0SxWfjxjt7AJyv12VgEsNNg","site":"\u5929\u9999\u7a7a\u57ce","publishDate":"","refDate":"","count":"1"}]
+			});
+		});
+	}();
+!function(){        require.async(["wiki-common:widget/lib/jquery/jquery"],function($){
+            function openTagToggle(node) {
+                if ($(node).hasClass("collapse")) {
+                    $(node).removeClass("collapse");
+                    $("#open-tag").css("height", '22px');
+                } else {
+                    $(node).addClass("collapse");
+                    $("#open-tag").css("height", $("#open-tag-item").css("height"));
+                }
+            }
+            if (parseInt($("#open-tag-item").css("height")) <= 30) {
+                $('#open-tag-collapse').hide();
+            }
+            $("#open-tag-collapse").on("click", function () {
+                openTagToggle($("#open-tag")[0]);
+            });
+        });
+    }();
+!function(){        require('wiki-lemma:widget/lemma_content/configModule/zhixin/zhixin')(
+            9337,
+            'PHP'
+        );
+    }();
+!function(){    require.async(["wiki-lemma:widget/lemma_content/mainContent/lemmaStatistics/lemmaStatistics"],function(init){
+        init({
+            newLemmaIdEnc:"65ce853152b626d32f3eeb01"
+        });
+    });
+}();
+!function(){	require.async(["wiki-lemma:widget/lemma_content/mainContent/sideCatalog/sideCatalog"],function(SideCatalog){
+		new SideCatalog();
+	});
+}();
+!function(){        require.async(["wiki-lemma:widget/promotion/fengchao/fengchao","wiki-lemma:widget/promotion/unionAd/unionAd"], function (init, unionAd) {
+            init({
+                newLemmaId: "9337",
+                lemmaTitle: "PHP",
+                encodeLemmaTitle: "PHP",
+                adManager: {"baiduXunke":1}
+            }, {
+                errFn: unionAd,
+                dom: $('#side_box_unionAd')
+            });
+        });
+    }();
+!function(){        require.async(['wiki-lemma:widget/promotion/guessLike/guessLike'], function (app) {
+            app.init({
+                lemmaTitle: 'PHP',
+                adManager: {"baiduXunke":1}
+            });
+        });
+    }();
+!function(){            require.async(['wiki-lemma:widget/promotion/bottomAd/bottomAd'], function (init) {
+                init({
+                    sId: 'BOTTOM_PRO_AD',
+                    adManager: {"baiduXunke":1}
+                });
+            });
+        }();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var Dialog = require("wiki-common:widget/ui/dialog/dialog");
+    var userLogin = require('wiki-common:widget/component/userLogin/userLogin');
+    var unameFiller = require('wiki-common:widget/component/unameFiller/unameFiller');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+            var isEnterprise = false;
+        var enterpriseOwnerUserId = 0;
+    
+    var userId = 0;
+    var editUrl = '/edit/' + encodeURIComponent('PHP') + '/' + '9337';
+    var pgcUrl = '/enterprise/editpgc?lemmaId=9337';
+
+    userLogin.regist({
+        onLogin: function(user) {
+            userId = user ? user.uid : 0;
+        }
+    });
+
+    function gotoEdit(url, isMidNight) {
+        if (isMidNight) {
+            Dialog.alert({
+                title: '编辑提示',
+                subMsg: '晚23:00至次日8:00，因审核系统例行维护，您提交的版本可能需要较长时间才能通过，望您谅解。',
+                onConfirm: function() {
+                    window.location.href = url;
+                }
+            });
+        } else {
+            window.location.href = url;
+        }    
+    }
+
+    function showChoseEditDialog(pgcCallback, ugcCallback) {
+        new Dialog({
+            title: '编辑提示',
+            subMsg: '<p>您已开通企业百科服务，推荐您直接编辑“官方资料”，官方资料仅限企业百科绑定的百科账号修改，其他用户账号不可修改。</p><p>如果您想修改其他网友编辑的普通词条内容，请注意遵守百科百科编辑规则。<p>',
+            btns: [{
+            key: 'pgc',
+            text: '编辑官方资料'
+            }, {
+            style: 'white',
+            text: '修改普通词条',
+            key: 'ugc'
+            }],
+            onBtnClick: function(btnKey){
+                if (btnKey === 'pgc') {
+                    pgcCallback && pgcCallback();
+                } else if (btnKey === 'ugc') {
+                    ugcCallback && ugcCallback();
+                }
+            }
+        }).show();
+    }
+
+    function checkUserLegal(res) {
+        var legal = false;
+        switch (res.errno) {
+            case 100001:
+                userLogin.showLoginPop();
+                break;
+            case 100006:
+                unameFiller.show();
+                break;
+            default:
+                legal = true;
+        }
+        return true;
+    }
+
+    function checkUgc(res, url) {
+        if (res.errno) {
+            switch (res.errno) {
+                case 100005:
+                    alert('对不起，您目前被封禁');
+                    break;
+                case 110001:
+                    alert('对不起，该词条被锁定');
+                    break;
+                case 110007:
+                    alert('对不起，消歧页无法编辑');
+                    break;
+                case 110005:
+                    Dialog.alert({
+                    title: '编辑提示',
+                    mainMsg: '对不起，您暂时没有权限编辑该词条。',
+                    subMsg: '<p>您好，该词条内容已较丰富，现仅对百科等级达到<b>四级</b>且通过率达到<b>85%</b>的科友开放编辑。</p><p>当您通过努力达到以上要求，就可以参与编辑该词条了。</p><p><img src="https://bkssl.bdimg.com/img/baike/usercenter/growuptask/star.gif" class="star" />参加<a target="_blank" href="/usercenter#guide">成长任务</a>，更快掌握百科编辑技巧，加速升级！</p>'
+                    });
+                    break;
+                case 110008:
+                    Dialog.alert({
+                    title: '编辑提示',
+                    mainMsg: '对不起，您暂时没有权限编辑该词条。',
+                    subMsg: '<p>您好，该词条内容已较丰富，现仅对百科等级达到<b>六级</b>且通过率达到<b>85%</b>的科友开放编辑。</p><p>当您通过努力达到以上要求，就可以参与编辑该词条了。</p><p><img src="https://bkssl.bdimg.com/img/baike/usercenter/growuptask/star.gif" class="star" />参加<a target="_blank" href="/usercenter#guide">成长任务</a>，更快掌握百科编辑技巧，加速升级！</p>'
+                    });
+                    break;
+                case 470001:
+                    alert('系统错误，请刷新重试');
+                    break;
+            }
+        } else {
+            if (!res.data.right.noAudit) {
+                Dialog.alert({
+                    title: '编辑提示',
+                    subMsg: '很抱歉，该词条有其他用户编辑的版本正在提交，您暂时无法编辑。<br/>百科建议您晚些时候再编辑该词条，或者尝试编辑其他的词条。'
+                });
+                return;
+            }
+            gotoEdit(url, res.data.notice.isMidNight);
+        }
+    }
+
+    $(document.body).on('click', '.j-edit-link', function() {
+        var dl = $(this).attr('data-edit-dl');
+        if (dl) {
+            var url = editUrl + '?dl=' + dl;
+        } else {
+            var url = editUrl;
+        }
+
+        rightCheck.preeditCheck('9337', 'PHP', '超文本预处理器', '111389412', '', function(res) {
+            if (!checkUserLegal(res)) {
+                return;
+            }
+            if (isEnterprise && enterpriseOwnerUserId === userId) {
+                showChoseEditDialog(function() {
+                    location.href = pgcUrl;
+                }, function() {
+                    checkUgc(res, url);
+                });
+            } else {
+                checkUgc(res, url);
+            }
+        });
+    });
+}();
+!function(){  require.async(["wiki-common:widget/lib/jquery/jquery","wiki-common:widget/component/footer/footer_feedback"], function($, feedback){
+    feedback({el: '#J-bk-feedback-main'});
+    feedback({el: '#J-bk-feedback-query', config: {
+        appid: 215645,
+        productLine: 20184,
+        needContactWay: false,
+        issuePlaceholder: '亲爱的百度百科用户，请在此填写您的质疑内容及原因哦～'
+      },
+      proData: {
+        "kw": $('#J-bk-feedback-query').data('lemma')
+      }
+    });
+  });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery'),
+      initSearchbar = require('wiki-common:widget/component/searchbar-n/searchbar');  
+    initSearchbar($('.wgt-searchbar-simple'));
+  }();
+!function(){    require.async(["wiki-lemma:widget/tools/searchHeader/toolButtons-n/toolButtons"],function(init){
+        init({
+            lemmaId:"99",
+            subLemmaId:"5828265",
+            newLemmaId:"9337"
+        });
+    });
+}();
+!function(){    require('wiki-lemma:widget/tools/searchHeader/toolButtons-n/userInfo')();
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery'),
+      animation = require('wiki-common:widget/util/animation'),
+      nslog = require('wiki-common:widget/component/nslog/nslog'),
+      initSearchbar = require('wiki-common:widget/component/searchbar/searchbar');
+
+    var isFadeIn = false,
+        isFadeOut = false;
+
+    var fadeInAni, fadeOutAni;
+
+    $(window).on('scroll', function(e) {
+        var scrollTop = $(this).scrollTop();
+
+        if (scrollTop > 200 && !isFadeIn && $('.lemmaWgt-searchHeader').css('display') == 'none') {
+            fadeOutAni && fadeOutAni.stop();
+            fadeInAni = animation({
+                duration: 200,
+                easing: 'linear',
+                onStart: function() {
+                    isFadeOut = false;
+                    isFadeIn = true;
+                    $('.lemmaWgt-searchHeader').css('display', 'block');
+                },
+                onStep: function(progress) {
+                    $('.lemmaWgt-searchHeader').css('opacity', progress)
+                },
+                onComplete: function(progress) {
+                    isFadeIn = false;
+                    nslog(10010007);
+                }
+            });
+        } else if (scrollTop <= 200 && !isFadeOut && $('.lemmaWgt-searchHeader').css('display') == 'block') {
+            fadeInAni && fadeInAni.stop();
+            fadeOutAni = animation({
+                duration: 300,
+                easing: 'linear',
+                onStart: function() {
+                    $('.lemmaWgt-searchHeader #suggestion').hide();
+                    isFadeIn = false;
+                    isFadeOut = true;
+                },
+                onStep: function(progress) {
+                    $('.lemmaWgt-searchHeader').css('opacity', 1 - progress);
+                },
+                onComplete: function(progress) {
+                    isFadeOut = false;
+                    $('.lemmaWgt-searchHeader').css('display', 'none');
+                }
+            });
+        }
+    });
+}();
+!function(){    require('wiki-lemma:widget/tools/newSideShare/qzopensl');
+    require.async(["wiki-lemma:widget/tools/newSideShare/taskSideShare"],function(taskShare){
+        taskShare.init({
+            title: 'PHP',
+            desc: "PHP\uff08\u5916\u6587\u540d:PHP: Hypertext Preprocessor\uff0c\u4e2d\u6587\u540d\uff1a\u201c\u8d85\u6587\u672c\u9884\u5904\u7406\u5668\u201d\uff09\u662f\u4e00\u79cd\u901a\u7528\u5f00\u6e90\u811a\u672c\u8bed\u8a00\u3002\u8bed\u6cd5\u5438\u6536\u4e86C\u8bed\u8a00\u3001Java\u548cPerl\u7684\u7279\u70b9\uff0c\u5229\u4e8e\u5b66\u4e60\uff0c\u4f7f\u7528\u5e7f\u6cdb\uff0c\u4e3b\u8981\u9002\u7528\u4e8eWeb\u5f00\u53d1\u9886\u57df\u3002PHP \u72ec\u7279\u7684\u8bed\u6cd5\u6df7\u5408\u4e86C\u3001Java\u3001Perl\u4ee5\u53caPHP\u81ea\u521b\u7684\u8bed\u6cd5\u3002\u5b83\u53ef\u4ee5\u6bd4CGI\u6216\u8005Perl\u66f4\u5feb\u901f\u5730\u6267\u884c\u52a8\u6001\u7f51\u9875\u3002\u7528PHP\u505a\u51fa\u7684\u52a8\u6001\u9875\u9762\u4e0e\u5176\u4ed6\u7684\u7f16\u7a0b\u8bed\u8a00\u76f8\u6bd4\uff0cPHP\u662f\u5c06\u7a0b\u5e8f\u5d4c\u5165\u5230HTML\uff08\u6807\u51c6\u901a\u7528\u6807\u8bb0\u8bed\u8a00\u4e0b\u7684\u4e00\u4e2a\u5e94\u7528\uff09\u6587\u6863\u4e2d\u53bb\u6267\u884c\uff0c\u6267\u884c\u6548\u7387\u6bd4\u5b8c\u5168\u751f\u6210HTML\u6807\u8bb0\u7684CGI\u8981\u9ad8\u8bb8\u591a\uff1bPHP\u8fd8\u53ef\u4ee5\u6267\u884c\u7f16\u8bd1\u540e\u4ee3\u7801\uff0c\u7f16\u8bd1\u53ef\u4ee5\u8fbe\u5230\u52a0\u5bc6\u548c\u4f18\u5316\u4ee3\u7801\u8fd0\u884c\uff0c\u4f7f\u4ee3\u7801\u8fd0\u884c\u66f4\u5feb\u3002",
+            pic: 'https:\/\/gss1.bdstatic.com\/9vo3dSag_xI4khGkpoWK1HF6hhy\/baike\/w%3D268\/sign=18603bb980025aafd33279cdc3ecab8d\/2f738bd4b31c870168f8cf9f257f9e2f0708ff79.jpg',
+            url: '',
+            qqPic: 'https:\/\/gss1.bdstatic.com\/9vo3dSag_xI4khGkpoWK1HF6hhy\/baike\/whfpf%3D353%2C353%2C0\/sign=ca4813fccbea15ce41bbb349d03d09c6\/2f738bd4b31c870168f8cf9f257f9e2f0708ff79.jpg',
+            newLemmaId: '9337',
+            lemmaTitle: 'PHP'
+        });
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var nslog = require("wiki-common:widget/component/nslog/nslog");
+    var testElem = require('wiki-common:widget/component/testElem/testElem');
+    var cmsModuleLoader = require('wiki-common:widget/component/cmsModuleLoader/cmsModuleLoader');
+
+    function requireAsync() {
+        require.async(['wiki-lemma:widget/tools/announcement/announcement']);
+    }
+
+    cmsModuleLoader('/api/wikiui/getlemmaconfig', [{
+        name: 'announcement',
+        script: 'wiki-lemma:widget/tools/announcement/announcement.js'
+    }]);
+
+    require.async(["wiki-lemma:widget/tools/lazyLoad/lazyLoad"], function(LazyLoad) {
+        new LazyLoad();
+    });
+
+    require.async(['wiki-common:widget/component/nslog/nslog','wiki-common:widget/lib/jquery/jquery'], function(nslog, $) {
+        nslog().setGlobal({
+            lemmaId: "99",
+            newLemmaId: "9337",
+            subLemmaId: "5828265",
+            lemmaTitle: "PHP"
+        });
+
+        // 词条页 pv
+        nslog(9322);
+
+        // 新版头部pv（小流量）
+        if ($('.pc-header-new').length > 0) {
+            nslog(9069);
+        }
+
+        // 链接点击 pv
+        var lemmaPageRegExp = new RegExp(/\/subview\/\d+|\/view\/\d+|\/item\//i);
+        $('body').on('mousedown', 'a', function() {
+            var href = $(this).attr('href');
+            if (href && href.indexOf('/') >= 0 && href.indexOf('#') !== 0) {
+                // 链接点击 pv
+                nslog(10000001);
+                if (lemmaPageRegExp.test(href)) {
+                    // 词条页链接点击 pv
+                    nslog(10000002, window.location.href, {
+                        targetTitle: $(this).text()
+                    });
+                }
+            }
+        });
+
+        /****** 词条页站内流转需求统计 start ******/
+        (function () {
+            // 各种统计配置
+            var circulationLinkCfg = {
+                innerLink: [ // 内链
+                    '.para',
+                    '.lemmaWgt-baseInfo-simple-largeMovie',
+                    '.lemmaWgt-baseInfo-simple-largeStar',
+                    '.basic-info .basicInfo-block',
+                    '.lemma-summary',
+                    '.lemmaWgt-lemmaSummary',
+                    '.view-tip-panel',
+                    '.horizontal-module',
+                    '.lemmaWgt-roleIntroduction',
+                    '.dramaSeries .dramaSerialList',
+                    '.module-music',
+                    '.table-view',
+                    '[log-set-param="table_view"]',
+                    '.list-module',
+                    '.cell-module',
+                    '.baseBox .dl-baseinfo', // 配置后台字段
+                    '.pvBtn-box .leadPVBtnWrapper',
+                    '.drama-actor',
+                    '#staffList',
+                    '.starMovieAndTvplay',
+                    '.main_tab:not(.main_tab-defaultTab)' // 除去词条tab外的tab
+                ],
+                relationTable: '.rs-container-foot', // 关系表
+                peopleRelation: '.star-info-block.relations, .lemmaWgt-focusAndRelation', // 人物关系（明星+普通）
+                moduleActors: '.featureBaseInfo .actors, .lemmaWgt-majorActors', // 主要演员、嘉宾、主持人
+                moduleWorks: '.featureBaseInfo .works, .large-feature .works', // 代表作品
+                moduleQuarterly: '.featureBaseInfo .po_quarterly, .mian_quarterly', // 分季介绍
+                rankStar: '.rank-list.stars-rank', // 明星榜
+                rankDrama: '.drama-rank-list', // 电视剧榜
+                specialTopic: '.special-topic', // 专题模块
+                modDetailTable: '#modDetailTable', // 关系表出图
+                chuizhitu: '.chuizhitu', // 垂直化模块
+                polysemantList: '.polysemantList-wrapper' // 义项切换
+            };
+            /****** 连接统计 ******/
+            function clickNslogFn() {
+                for (var k in circulationLinkCfg) {
+                    if (k === 'innerLink') {
+                        // 词条内链到词条页
+                        var tempArr = circulationLinkCfg[k];
+                        for (var i = 0, l = tempArr.length; i < l; i++) {
+                            tempArr[i] += ' a';
+                        }
+                        var sSelector = tempArr.join(', ');
+
+                        $('body').on('mousedown', sSelector, {key: k},function(e) {
+                            var key = e.data.key;
+                            var href = $(this).attr('href');
+                            var tar = $(this).attr('target') || '';
+                            if (href && href.indexOf('/') >= 0 && href.indexOf('#') !== 0
+                            && tar === '_blank' && lemmaPageRegExp.test(href)) {
+                                // 词条页普通内链点击 pv
+                                nslog(10000004, null ,{division: key});
+                            }
+                        });
+                    } else {
+                        // 模块到词条页链接
+                        $(circulationLinkCfg[k]).on('mousedown', 'a', {key: k}, function (e) {
+                            var key = e.data.key;
+                            var href = $(this).attr('href');
+                            if (href && href.indexOf('#') !== 0 && lemmaPageRegExp.test(href)) {
+                                // 词条页配置模块链接点击 pv
+                                nslog(10000004, null, {division: key});
+                            }
+                        });
+                    }
+                }
+            }
+            // 发起统计请求
+            clickNslogFn();
+
+            /****** 各模块展现量pv ******/
+            function checkModuleIsShow() {
+                var result = [];
+                for (var k in circulationLinkCfg) {
+                    if (k !== 'innerLink' && k !== 'relationTable') {
+                        !!$(circulationLinkCfg[k]).html() && result.push(k);
+                    }
+                }
+                if (result.length > 0) {
+                    nslog(10000005, null, {showModules: result.join(',')});
+                }
+            }
+            checkModuleIsShow();
+
+        })();
+        /****** 词条页站内流转需求统计 end ******/
+
+    });
+
+    // 广告接入 wikiad 统一加载
+    // log 词条页广告被拦截情况（此处 log 请求行为）
+    nslog(70000101, window.location.href, {
+        api: 'lemma-ad',
+        action: 'request'
+    });
+    var tags = {"2":{"tagId":76607,"tagName":"\u79d1\u5b66\u767e\u79d1\u4fe1\u606f\u79d1\u5b66\u5206\u7c7b"},"0":{"tagId":68031,"tagName":"\u4e2d\u56fd\u7535\u5b50\u5b66\u4f1a"},"1":{"tagId":0,"tagName":"\u4e92\u8054\u7f51"}};
+    var tagsArray = [];
+    for (var key in tags) {
+        tagsArray.push(tags[key].tagName);
+    }
+    $.ajax({
+        type: 'GET',
+        url: '/api/wikiad/getsquirrels',
+        data: {
+            lemmaId: 9337,
+            tags: tagsArray.join()
+        },
+        cache: false,
+        dataType: 'JSON',
+        success: function (res) {
+            // log 词条页广告被拦截情况（此处 log 请求成功）
+            nslog(70000101, window.location.href, {
+                api: 'lemma-ad',
+                action: 'success'
+            });
+
+            if (!res.errno) {
+                if (res.data[5]) {
+                    require.async(['wiki-lemma:widget/promotion/rightPreciseAd/rightPreciseAd'], function(rightPreciseAd) {
+                        rightPreciseAd(res.data[5]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[5][0].adId,
+                            adTitle: res.data[5][0].name,
+                            adPos: 5
+                        });
+                    });
+                } else if (res.data[1]) {
+                                        require.async(['wiki-lemma:widget/promotion/vbaike/vbaike'], function(vbaike) {
+                        vbaike(res.data[1]);
+                        for(var i in res.data[1]) {
+                            nslog(10002201, location.href, {
+                                adId: res.data[1][i].adId,
+                                adTitle: res.data[1][i].name,
+                                adPos: 1
+                            });
+                        }
+                    });
+                                    }
+                if (res.data[9]) {
+                                        require.async(['wiki-lemma:widget/promotion/rightBigAd/rightBigAd'], function(rightBigAd) {
+                        rightBigAd(res.data[9]);
+                            nslog(10002201, location.href, {
+                                adId: res.data[9][0].adId,
+                                adTitle: res.data[9][0].name,
+                                adPos: 9
+                            });
+                    });
+                                    } else if(res.data[2]) {
+                    require.async(['wiki-lemma:widget/promotion/slide/slide'], function(slide) {
+                        slide(res.data[2]);
+                        for(var i in res.data[2]) {
+                            nslog(10002201, location.href, {
+                                adId: res.data[2][i].adId,
+                                adTitle: res.data[2][i].name,
+                                adPos: 2
+                            });
+                        }
+                    });
+                }
+                if (res.data[3]) {
+                                        require.async(['wiki-lemma:widget/promotion/topAd/topAd'], function(topAd) {
+                        topAd(res.data[3]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[3][0].adId,
+                            adTitle: res.data[3][0].name,
+                            adPos: 3
+                        });
+                    });
+                                    }
+                if (res.data[4]) {
+                                        require.async(['wiki-lemma:widget/promotion/rightAd/rightAd'], function(rightAd) {
+                        rightAd(res.data[4]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[4][0].adId,
+                            adTitle: res.data[4][0].name,
+                            adPos: 4
+                        });
+                    });
+                                    }
+                if (res.data[15]) {
+                    require.async(['wiki-lemma:widget/promotion/banner/banner'], function(banner) {
+                        banner(res.data[15]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[15][0].adId,
+                            adTitle: res.data[15][0].name,
+                            adPos: 15
+                        });
+                    });
+                }
+                if (res.data[16]) {
+                    require.async(['wiki-lemma:widget/promotion/declaration/declaration'], function(declaration) {
+                        declaration(res.data[16]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[16][0].adId,
+                            adTitle: res.data[16][0].name,
+                            adPos: 16
+                        });
+                    })
+                }
+            } else {
+                return;
+            }
+
+            setTimeout(function () {
+                var elemArr = {};
+                res.data[1] && res.data[1].length > 0 && (elemArr['lemma-vbaike-ad'] = $('.lemmaWgt-promotion-vbaike .promotion_viewport a:eq(0) img').get(0));
+                res.data[2] && res.data[2].length > 0 && (elemArr['lemma-slide-ad'] = $('.lemmaWgt-promotion-slide .promotion_viewport a:eq(0) img').get(0));
+                res.data[3] && res.data[3].length > 0 && (elemArr['lemma-navbar-ad'] = {
+                    node: $('.header [nslog-type="10002202"]').get(0),
+                    validations: {
+                        'noBackgroundImage': function() {
+                            return $('.header [nslog-type="10002202"]').css('background-image').indexOf(res.data[3][0].picUrl) < 0
+                        }
+                    }
+                });
+                res.data[4] && res.data[4].length > 0 && (elemArr['lemma-side-ad'] = {
+                    node: $('.right-ad img').get(0),
+                    validations: {
+                        'noBackgroundImage': function() {
+                            return $('.right-ad img').attr('src').indexOf(res.data[4][0].picUrl) < 0
+                        }
+                    }
+                });
+                res.data[15] && res.data[15].length > 0 && (elemArr['lemma-configModule-banner'] = $('.configModuleBanner').get(0));
+                res.data[16] && res.data[16].length > 0 && (elemArr['lemma-configModule-declaration'] = $('.lemmaWgt-declaration').get(0));
+
+                testElem.log(elemArr, 70000102);
+            }, 1000);
+        },
+        error: function () {
+            // log 词条页广告被拦截情况（此处 log 请求失败）
+            nslog(70000101, window.location.href, {
+                api: 'lemma-ad',
+                action: 'error'
+            });
+        }
+    });
+
+    // 设置分享内容
+    window.BKShare.setCommon({
+        bdText: "\u3010PHP_\u767e\u5ea6\u767e\u79d1\u3011PHP\uff08\u5916\u6587\u540d:PHP: Hypertext Preprocessor\uff0c\u4e2d\u6587\u540d\uff1a\u201c\u8d85\u6587\u672c\u9884\u5904\u7406\u5668\u201d\uff09\u662f\u4e00\u79cd\u901a\u7528\u5f00\u6e90\u811a\u672c\u8bed\u8a00\u3002\u8bed\u6cd5\u5438\u6536\u4e86C\u8bed\u8a00\u3001Java\u548cPerl\u7684\u7279\u70b9\uff0c\u5229\u4e8e\u5b66\u4e60\uff0c\u4f7f\u7528\u5e7f\u6cdb\uff0c\u4e3b\u8981\u9002\u7528\u4e8eWeb\u5f00\u53d1\u9886\u57df\u3002PHP \u72ec\u7279\u7684\u8bed\u6cd5\u6df7\u5408\u4e86C\u3001Java\u3001Perl\u4ee5\u53caPHP\u81ea\u521b\u7684\u8bed\u6cd5\u3002\u5b83\u53ef\u4ee5\u6bd4CGI\u6216\u8005Perl\u66f4\u5feb\u901f\u5730\u6267\u884c\u52a8\u6001\u7f51\u9875\u3002\u7528PHP\u505a\u51fa\u7684\u52a8\u6001\u9875\u9762\u4e0e\u5176\u4ed6\u7684\u7f16\u7a0b\u8bed\u8a00\u76f8\u6bd4\uff0cPHP\u662f\u5c06\u7a0b\u5e8f\u5d4c\u5165\u5230HTML\uff08\u6807\u51c6\u901a\u7528\u6807\u8bb0\u8bed\u8a00\u4e0b\u7684\u4e00\u4e2a\u5e94\u7528\uff09\u6587\u6863\u4e2d\u53bb\u6267\u884c\uff0c\u6267\u884c\u6548\u7387\u6bd4\u5b8c\u5168\u751f\u6210HTML\u6807\u8bb0\u7684CGI\u8981\u9ad8\u8bb8\u591a\uff1bPHP\u8fd8\u53ef\u4ee5\u6267\u884c\u7f16\u8bd1\u540e\u4ee3\u7801\uff0c\u7f16\u8bd1\u53ef\u4ee5\u8fbe\u5230\u52a0\u5bc6\u548c\u4f18\u5316\u4ee3\u7801\u8fd0\u884c\uff0c\u4f7f\u4ee3\u7801\u8fd0\u884c\u66f4\u5feb\u3002.....\uff08\u5206\u4eab\u81ea@\u767e\u5ea6\u767e\u79d1\uff09",
+        bdDesc: '',
+        bdUrl: 'http:\/\/baike.baidu.com\/item\/PHP\/9337',
+        bdPic: '',
+        onBeforeClick: function (){
+            $('.bdshare_dialog_box').hide();
+        }
+    });
+
+    // 底部投诉带入当前页面 url
+    var map = [1, 2, 6, 5];
+    $('.wgt-footer-main .suggestion').find('a').each(function(i) {
+        $(this).attr('href', 'http://help.baidu.com/newadd?word=PHP' + '&&submit_link=' + encodeURIComponent(window.location.href) + '&prod_id=10&category=' + map[i]);
+    });
+
+    // 为超出预设内容的表格添加table-responsive控制
+    $('.main-content').find('table').each(function(index) {
+        var $that = $(this);
+        if ($that.width() > 790) {
+            $that.wrap('<div class="table-responsive"></div>');
+        }
+    });
+}();
+!function(){      require('wiki-common:widget/component/psLink/psLink');
+    }();</script>
+<script type="text/javascript">
+  var Hunter = window.Hunter || {};
+  Hunter.userConfig = Hunter.userConfig || [];
+  </script>
+<script type="text/javascript" src="https://gss0.baidu.com/70cFsjip0QIZ8tyhnq/hunter/baike.js?st=17683" defer></script><script type="text/javascript">
+  // DOM Ready时，统计用户可操作时间。
+  alog('speed.set', 'drt', +new Date);
+
+  void function(a,b,c,d,e,f){function g(b){a.attachEvent?a.attachEvent("onload",b,!1):a.addEventListener&&a.addEventListener("load",b)}function h(a,c,d){d=d||15;var e=new Date;e.setTime((new Date).getTime()+1e3*d),b.cookie=a+"="+escape(c)+";path=/;expires="+e.toGMTString()}function i(a){var c=b.cookie.match(new RegExp("(^| )"+a+"=([^;]*)(;|$)"));return null!=c?unescape(c[2]):null}function j(){var a=i("PMS_JT");if(a){h("PMS_JT","",-1);try{a=a.match(/{["']s["']:(\d+),["']r["']:["']([\s\S]+)["']}/),a=a&&a[1]&&a[2]?{s:parseInt(a[1]),r:a[2]}:{}}catch(c){a={}}a.r&&b.referrer.replace(/#.*/,"")!=a.r||alog("speed.set","wt",a.s)}}if(a.alogObjectConfig){var k=a.alogObjectConfig.sample,l=a.alogObjectConfig.rand;d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d,k&&l&&l>k||(g(function(){alog("speed.set","lt",+new Date),e=b.createElement(c),e.async=!0,e.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),f=b.getElementsByTagName(c)[0],f.parentNode.insertBefore(e,f)}),j())}}(window,document,"script","/hunter/alog/dp.min.js");
+</script>
+</html>
