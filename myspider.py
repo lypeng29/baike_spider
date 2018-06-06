@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from baike import url_manager,html_downloader,html_outputer,html_parser
+from baike_spider import url_manager,html_downloader,html_outputer,html_parser
 
 class MySpider(object):
     def __init__(self):
