@@ -1,8 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
+from baike_spider import db_mysql
+
 class HtmlOutputer(object):
     def __init__(self):
         self.datas = []
+        self.db = db_mysql.database()
     def collect_data(self, data):
         if data is None:
             return
@@ -18,6 +22,14 @@ class HtmlOutputer(object):
             
         fout.write("</body></html>")
         fout.close()
+    
+    def output_db(self):
+        for data in self.datas:
+            # fout.write("<h3>%s (%s)</h3>\r\n" % (data['title'],data['url']))
+            # fout.write("<p>%s</p><hr/>\r\n" % data['summary'])
+            lastid = self.db.insert("insert into cons(title,url,content) values('%s','%s','%s')" % (data['title'],data['url'],self.db.escape(data['summary'])))
+            print(lastid)
+        self.db.close()
     
 
     

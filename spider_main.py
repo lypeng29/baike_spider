@@ -18,19 +18,22 @@ class SpiderMain(object):
                 print('craw %d : %s' % (count, new_url))
                 html_cont = self.downloader.download(new_url)
                 new_urls,new_data = self.parser.parse(new_url,html_cont)
-                self.urls.add_urls(new_urls)
+                if count < 6:
+                    self.urls.add_urls(new_urls)
+
                 # print(new_data)
                 self.outputer.collect_data(new_data)
                 
-                if count == 200:
+                if count == 3000:
                     break
 
                 count += 1
             except:
                 print('CRAW FAILED')
-        self.outputer.output_html()
+        # self.outputer.output_html()
+        self.outputer.output_db()
 
 if __name__=='__main__':
-    root_url = "https://baike.baidu.com/item/php/9337"
+    root_url = "https://baike.baidu.com/item/%E6%B0%B4/34133"
     obj_spider = SpiderMain()
     obj_spider.craw(root_url)
